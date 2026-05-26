@@ -1,0 +1,23 @@
+---
+description: kern-x X cron runtime — allowlist and English-only execution
+globs:
+  - runtime/**
+  - state/**
+  - logs/**
+  - voice/**
+  - scripts/**
+alwaysApply: true
+---
+
+# kern-x runtime
+
+When running `prompts/cron-post.txt` or `prompts/cron-reply.txt`:
+
+1. Follow **only** the matching `runtime/*.RUN.md` allowlist. No repo search. No BuiltByKern paths.
+2. English only on X. Voice = `voice/voice-compact.txt`.
+3. After browser post/reply, run `scripts/record_post.py` or `scripts/record_reply.py` from repo root.
+4. Reply cycle: `--bump-rotation` only on the last reply of a cycle.
+5. Stop on login/captcha/verification — report error, no retry.
+6. Do not load `docs/strategy.md` during cron.
+
+Sunday human task: `python3 scripts/build_week.py`.

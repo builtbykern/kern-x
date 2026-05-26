@@ -1,0 +1,74 @@
+{
+  "week": "2026-W22",
+  "built_at": "2026-05-25",
+  "challenge_mode": false,
+  "days": {
+    "mon": {
+      "type": "clip",
+      "component": "FlowingMenu",
+      "link": false,
+      "hook": "FlowingMenu: one control that fixes scroll jank in framer",
+      "thread_allowed": false,
+      "forbid_mention_in_replies": false
+    },
+    "tue": {
+      "type": "insight",
+      "component": null,
+      "link": false,
+      "hook": "shared colors as source of truth across code components",
+      "thread_allowed": true,
+      "forbid_mention_in_replies": false
+    },
+    "wed": {
+      "type": "spotlight",
+      "component": "Kern_InertiaGrid",
+      "link": false,
+      "hook": "Physics-driven media grid with inertia hover behavior, responsive scaling, and designer-first controls.",
+      "thread_allowed": false,
+      "forbid_mention_in_replies": true,
+      "price_launch": 2.5,
+      "price_final": 5.0
+    },
+    "thu": {
+      "type": "take",
+      "component": null,
+      "link": false,
+      "hook": "marketplace reviews reward depth over preset count",
+      "thread_allowed": false,
+      "forbid_mention_in_replies": false
+    },
+    "fri": {
+      "type": "before_after",
+      "component": "Kern_KineticLinesGrid",
+      "link": false,
+      "hook": "Kern_KineticLinesGrid: before/after: inertia grid vs static gallery",
+      "thread_allowed": false,
+      "forbid_mention_in_replies": false
+    },
+    "sat": {
+      "type": "ecosystem",
+      "component": null,
+      "link": false,
+      "hook": "sustained shipping beats one-off launches in the creator ecosystem",
+      "thread_allowed": false,
+      "forbid_mention_in_replies": false
+    },
+    "sun": {
+      "type": "recap",
+      "component": null,
+      "link": false,
+      "hook": "week in framer components: what shipped and what broke",
+      "thread_allowed": false,
+      "forbid_mention_in_replies": false
+    }
+  },
+  "today_key": "mon",
+  "today": {
+    "type": "clip",
+    "component": "FlowingMenu",
+    "link": false,
+    "hook": "FlowingMenu: one control that fixes scroll jank in framer",
+    "thread_allowed": false,
+    "forbid_mention_in_replies": false
+  }
+}
