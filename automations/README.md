@@ -1,24 +1,40 @@
-# Cursor Automations (draft)
+# Cursor Automations — kern-x
 
-Create in [cursor.com/automations](https://cursor.com/automations) with workspace root = **kern-x**.
+## KERN-Reply (ready)
+
+| Asset | Purpose |
+|-------|---------|
+| [`kern-reply.workflow.json`](kern-reply.workflow.json) | Workflow spec (cron, prompt, repo, browser) |
+| [`kern-reply.prefill.url`](kern-reply.prefill.url) | **One-click** open Automations form (prefilled) |
+| [`KERN-REPLY-SETUP.md`](KERN-REPLY-SETUP.md) | Checklist: GitHub repo, browser, TZ |
+| [`kern-reply.prompt.md`](kern-reply.prompt.md) | Full prompt reference |
+| [`../scripts/schedule_reply_loop.sh`](../scripts/schedule_reply_loop.sh) | Accio jitter 75–105m local loop |
+
+### Create in UI (recommended)
+
+1. Open [`kern-reply.prefill.url`](kern-reply.prefill.url) in browser (or paste URL in Cursor).
+2. Attach **GitHub repo** `kern-x` (push repo first — see SETUP).
+3. Enable **Browser** tool. Memory **off**.
+4. Confirm cron `0 8-22 * * *` timezone **America/New_York** (change if needed).
+5. Save automation.
+
+`create_automation` MCP may reject proto fields; prefill URL matches what the UI expects.
+
+### Local parity (X login)
+
+Cloud may lack @builtbykern session. Fallback:
+
+```text
+/loop 90m Run runtime/reply-cycle.RUN.md per prompts/cron-reply-jitter.txt. Browser @builtbykern.
+```
+
+Or background: `scripts/schedule_reply_loop.sh` (75–105m jitter).
 
 ## KERN-Post (daily)
 
-- **Trigger:** Schedule cron `0 9 * * *` (adjust TZ)
-- **Model:** fast/cheaper OK (allowlist is small)
-- **Prompt:** file `prompts/cron-post.txt`
-- **Rules:** enable repo `cursor/rules/kern-x-runtime.mdc`
-
-## KERN-Reply (recurring)
-
-- **Trigger:** Schedule every 75m OR manual chain (“after run, note next run in 75–105m”)
-- **Prompt:** `prompts/cron-reply.txt`
-- **Jitter:** vary 45–90m between cycles in automation description
+- Cron `0 9 * * *` — prompt `prompts/cron-post.txt` — context `runtime/post.RUN.md`
+- Prefill: build from `kern-reply.workflow.json` pattern when needed.
 
 ## Privacy
 
-Automations need storage-eligible privacy mode. Browser X login is **local** unless you use cloud browser — prefer local IDE + `/loop` if cloud cannot hold X session.
-
-## Prefill
-
-Use Cursor MCP `build_automation_prefill_url` after you finalize workflow JSON in the UI once, then store a copy under `automations/` for version control (optional).
+Automations need storage-eligible privacy mode.

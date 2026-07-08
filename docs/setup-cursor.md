@@ -1,6 +1,6 @@
 # Cursor setup — kern-x
 
-Open **`/Users/noel_/Desktop/kern-x`** as its own Cursor workspace (File → Open Folder).
+Open **`/Users/noel/Desktop/kern-x`** as its own Cursor workspace (File → Open Folder).
 
 ## 1. Config
 
@@ -23,11 +23,18 @@ Do not attach BuiltByKern repo. Only this workspace.
 
 ## 3. X session (browser)
 
-Execution uses **browser** (Cursor Browser MCP or manual):
+**Recommended (full automation):** Playwright + persistent session — see [`automation-architecture.md`](automation-architecture.md).
 
-1. Log in as **@builtbykern** in the browser Cursor controls.
-2. Agent searches/posts per RUN steps.
-3. After each action, run `record_post.py` / `record_reply.py` from repo root.
+```bash
+pip install -r requirements-browser.txt && playwright install chromium
+python3 scripts/x_login.py
+export OPENAI_API_KEY=...   # or CURSOR_API_KEY
+python3 scripts/x_reply_cycle.py
+```
+
+Schedule: `scripts/run_x_reply_cycle.sh` from cron/launchd (not Cursor browser MCP).
+
+**Legacy:** Cursor Browser MCP or manual post + `record_post.py` / `record_reply.py`.
 
 Without a logged-in session, runs must stop with `error` — no retries.
 

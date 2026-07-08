@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "jobs": [
+    {
+      "id": "cron-builtbykern-jitter-next",
+      "name": "builtbykern-engagement-jitter",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "00 10 20 05 *"
+      },
+      "payload": {
+        "kind": "agent",
+        "message": "Start daily engagement cycles for @builtbykern on X. Framer search, 48h dedup, 2-5 English replies (lowercase, short). Reschedule next with 75-105m jitter.",
+        "agent": "general"
+      },
+      "target": {
+        "type": "workspace",
+        "workspacePath": "/Users/noel/Desktop/BuiltByKern"
+      },
+      "workspacePath": "/Users/noel/Desktop/BuiltByKern/Accio",
+      "state": {
+        "nextRunAtMs": 1810800000000
+      },
+      "updatedAtMs": 1779282184133
+    }
+  ]
+}

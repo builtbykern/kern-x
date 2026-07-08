@@ -14,9 +14,10 @@ ALLOWLIST: `state/week-current.json`, `state/daily-caps.json`, `voice/voice-comp
    - `spotlight` / `launch`: component + one concrete benefit + `today.link` if set
    - `ecosystem` / `recap` / `take`: no sell on Sat; no link unless `today.link` set
 6. Open `https://x.com/builtbykern` — confirm not duplicate topic visually.
-7. Post on X (browser). Then run:
-   `python3 scripts/record_post.py --url <post_url> --type <today.type> --component <name or empty> --had-link <true|false> --text "<tweet>"`
-8. Or append manually to `logs/posts.json` and increment `daily-caps.posts`.
+7. Post. Append to `logs/posts.json`: `{date, post_url, type, component, had_link, text}`.
+8. Set `daily-caps.posts` += 1.
+
+Optional helper (same effect as steps 7–8): `python3 scripts/record_post.py --url ... --type ... --component ... --had-link true|false --text "..."`
 
 ## Output (exactly 4 lines, no more)
 

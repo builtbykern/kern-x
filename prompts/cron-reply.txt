@@ -1,1 +1,1 @@
-Run runtime/reply-cycle.RUN.md. State: state/. Logs: logs/replies.json. Record via scripts/record_reply.py. No other files. No repo search.
+Run runtime/reply-cycle.RUN.md. State: state/. Log: logs/replies.json. No other files.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Append reply, cooldown handle (+48h), bump caps and query rotation."""
+"""Append reply, cooldown handle (+7d), bump caps and query rotation."""
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ CAPS_PATH = ROOT / "state" / "daily-caps.json"
 COOLDOWN_PATH = ROOT / "state" / "cooldown-handles.json"
 ROTATION_PATH = ROOT / "state" / "query-rotation.json"
 MAX_ENTRIES = 50
-COOLDOWN_SECONDS = 48 * 3600
+COOLDOWN_SECONDS = 7 * 24 * 3600
 
 
 def normalize_handle(handle: str) -> str:
@@ -68,7 +68,12 @@ def main() -> None:
         caps["date"] = today
         caps["posts"] = caps.get("posts", 0)
         caps["replies"] = 0
+        caps["referrals_today"] = 0
     caps["replies"] = int(caps.get("replies", 0)) + 1
+    from _config import text_has_referral_link
+
+    if text_has_referral_link(args.text):
+        caps["referrals_today"] = int(caps.get("referrals_today", 0)) + 1
     CAPS_PATH.write_text(json.dumps(caps, indent=2) + "\n", encoding="utf-8")
 
     if args.bump_rotation and ROTATION_PATH.is_file():

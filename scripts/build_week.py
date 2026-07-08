@@ -103,6 +103,11 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Build kern-x week state JSON")
     parser.add_argument("--week", help="ISO week id e.g. 2026-W21 (default: current)")
     parser.add_argument("--start", help="Week start date YYYY-MM-DD (Monday)")
+    parser.add_argument(
+        "--keep-counters",
+        action="store_true",
+        help="Do not reset daily-caps or query-rotation.cycle_index",
+    )
     args = parser.parse_args()
 
     cfg = load_config()
@@ -142,19 +147,20 @@ def main() -> None:
     out_path = STATE_DIR / "week-current.json"
     out_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 
-    rotation_path = STATE_DIR / "query-rotation.json"
-    if rotation_path.is_file():
-        rot = json.loads(rotation_path.read_text(encoding="utf-8"))
-        rot["cycle_index"] = 0
-        rotation_path.write_text(json.dumps(rot, indent=2) + "\n", encoding="utf-8")
+    if not args.keep_counters:
+        rotation_path = STATE_DIR / "query-rotation.json"
+        if rotation_path.is_file():
+            rot = json.loads(rotation_path.read_text(encoding="utf-8"))
+            rot["cycle_index"] = 0
+            rotation_path.write_text(json.dumps(rot, indent=2) + "\n", encoding="utf-8")
 
-    if CAPS_PATH.is_file():
-        caps = json.loads(CAPS_PATH.read_text(encoding="utf-8"))
-        if caps.get("date") != today.isoformat():
-            caps["date"] = today.isoformat()
-            caps["posts"] = 0
-            caps["replies"] = 0
-            CAPS_PATH.write_text(json.dumps(caps, indent=2) + "\n", encoding="utf-8")
+        if CAPS_PATH.is_file():
+            caps = json.loads(CAPS_PATH.read_text(encoding="utf-8"))
+            if caps.get("date") != today.isoformat():
+                caps["date"] = today.isoformat()
+                caps["posts"] = 0
+                caps["replies"] = 0
+                CAPS_PATH.write_text(json.dumps(caps, indent=2) + "\n", encoding="utf-8")
 
     print(f"Wrote {out_path} (week={week_id}, today={today_key}, components={len(components)})")
 

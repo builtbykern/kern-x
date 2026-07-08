@@ -1,6 +1,8 @@
-# Verification checklist
+# Verification checklist (from Accio verify-accio-checklist)
 
 - [ ] `config/local.json` exists, `listings_dir` resolves
+- [ ] `./scripts/migrate_from_accio.sh` if re-syncing from BuiltByKern
+- [ ] `logs/replies.json` valid JSON (`repair_replies_log.py` if Accio duplicate root)
 - [ ] `python3 scripts/build_week.py` exits 0
 - [ ] `state/week-current.json` `today_key` matches weekday
 - [ ] `python3 scripts/trim_logs.py --check` exits 0

@@ -1,6 +1,6 @@
 {
-  "week": "2026-W22",
-  "built_at": "2026-05-25",
+  "week": "2026-W28",
+  "built_at": "2026-07-08",
   "challenge_mode": false,
   "days": {
     "mon": {
@@ -21,9 +21,9 @@
     },
     "wed": {
       "type": "spotlight",
-      "component": "Kern_InertiaGrid",
+      "component": "Kern_CustomCursor",
       "link": false,
-      "hook": "Physics-driven media grid with inertia hover behavior, responsive scaling, and designer-first controls.",
+      "hook": "Advanced custom cursor system for Framer with no-code variant zones via `data-cursor` keys.",
       "thread_allowed": false,
       "forbid_mention_in_replies": true,
       "price_launch": 2.5,
@@ -39,9 +39,9 @@
     },
     "fri": {
       "type": "before_after",
-      "component": "Kern_KineticLinesGrid",
+      "component": "FlowingMenu",
       "link": false,
-      "hook": "Kern_KineticLinesGrid: before/after: inertia grid vs static gallery",
+      "hook": "FlowingMenu: before/after: inertia grid vs static gallery",
       "thread_allowed": false,
       "forbid_mention_in_replies": false
     },
@@ -62,13 +62,15 @@
       "forbid_mention_in_replies": false
     }
   },
-  "today_key": "mon",
+  "today_key": "wed",
   "today": {
-    "type": "clip",
-    "component": "FlowingMenu",
+    "type": "spotlight",
+    "component": "Kern_CustomCursor",
     "link": false,
-    "hook": "FlowingMenu: one control that fixes scroll jank in framer",
+    "hook": "Advanced custom cursor system for Framer with no-code variant zones via `data-cursor` keys.",
     "thread_allowed": false,
-    "forbid_mention_in_replies": false
+    "forbid_mention_in_replies": true,
+    "price_launch": 2.5,
+    "price_final": 5.0
   }
 }

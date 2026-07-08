@@ -1,0 +1,1 @@
+Run runtime/reply-cycle.RUN.md. State: state/. Log: logs/replies.json. No other files. After run: schedule next engagement cycle in 60–90 minutes (jitter). Framer search pool with fallback, 7d dedup, max 3 English replies per cycle.

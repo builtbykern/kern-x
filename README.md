@@ -9,17 +9,18 @@ BuiltByKern marketplace data is read from a sibling repo path (configurable).
 | Lane | Runtime | Schedule |
 |------|---------|----------|
 | **A — Originals** | `runtime/post.RUN.md` | 1×/day morning |
-| **B — Replies** | `runtime/reply-cycle.RUN.md` | every 45–90 min, 10–14×/day |
+| **B — Replies** | `runtime/reply-cycle.RUN.md` | every 60–90 min, ~14–20 cycles/day (cap 32 replies) |
 
 **English only.** Links only when `state/week-current.json` → `today.link` is set.
 
 ## Quick start
 
-1. Copy config: `cp config/local.example.json config/local.json` and set `listings_dir` to your BuiltByKern listings folder.
-2. Sunday (or any day): `python3 scripts/build_week.py`
-3. Open this folder as a **separate Cursor workspace**.
-4. Cursor Automations or `/loop` — see `docs/setup-cursor.md`.
-5. Cron prompts: `prompts/cron-post.txt`, `prompts/cron-reply.txt`.
+1. Copy config: `cp config/local.example.json config/local.json` and set `listings_dir`.
+2. `python3 scripts/build_week.py` (Sunday or any day).
+3. **Automated replies (Google Chrome):** `./scripts/start_kern_reply.sh` — see [`docs/chrome-setup.md`](docs/chrome-setup.md).
+4. Daily post: Cursor agent or future `x_post_cycle.py` — see `docs/setup-cursor.md`.
+
+Full automation architecture: [`docs/automation-architecture.md`](docs/automation-architecture.md).
 
 ## Layout
 
@@ -38,14 +39,13 @@ kern-x/
 
 ## Migrate from Accio (BuiltByKern)
 
-Optional copy of live state/logs:
+Full re-sync (state, logs, reference, week rebuild, JSON repair):
 
 ```bash
-cp ../BuiltByKern/Accio/state/week-current.json state/  # or re-run build_week.py
-cp ../BuiltByKern/Accio/kern_replies.json logs/replies.json
-cp ../BuiltByKern/Accio/kern_posts.json logs/posts.json
-cp ../BuiltByKern/Accio/state/cooldown-handles.json state/
+./scripts/migrate_from_accio.sh
 ```
+
+See `MIGRATION.md`.
 
 ## Verification
 

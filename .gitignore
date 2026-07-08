@@ -1,5 +1,12 @@
 config/local.json
 .env
+state/.x-storage-state.json
+state/.chrome-profile/
+state/.compose-candidates.json
+logs/x-cycle.log
+logs/x-cycle.err
+node_modules/
+state/.compose-prompt.txt
 .DS_Store
 __pycache__/
 *.pyc

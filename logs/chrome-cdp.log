@@ -1,0 +1,153 @@
+
+DevTools listening on ws://127.0.0.1:9222/devtools/browser/8b762961-32f6-4e52-902e-0ab42300facb
+Created TensorFlow Lite XNNPACK delegate for CPU.
+Trying to load the allocator multiple times. This is *not* supported.
+[72069:534172:0525/191851.909242:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[72430:535554:0525/191905.737507:VERBOSE1:chrome/updater/updater.cc:352] Version: 149.0.7814.0, opt, ARM_64, command line: /Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake-all --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[72430:535554:0525/191905.737839:VERBOSE1:chrome/updater/updater.cc:355] OS version: 26.3.1, arch: arm64, System uptime (seconds): 26349, parent pid: 72069
+[72430:535554:0525/191905.741095:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[72432:535558:0525/191905.751852:VERBOSE1:chrome/updater/updater.cc:352] Version: 149.0.7814.0, opt, ARM_64, command line: /Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --crash-handler --database=/Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/Crashpad --url=https://clients2.google.com/cr/report --annotation=prod=Update4 --annotation=ver=149.0.7814.0 --handshake-fd=6 --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[72432:535558:0525/191905.752126:VERBOSE1:chrome/updater/updater.cc:355] OS version: 26.3.1, arch: arm64, System uptime (seconds): 26349, parent pid: 1
+[72432:535558:0525/191905.754588:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[72430:535554:0525/191905.755196:VERBOSE1:chrome/updater/crash_reporter.cc:124] Crash handler launched and ready.
+[72430:535554:0525/191905.756328:VERBOSE1:chrome/updater/crash_client.cc:108] Found 0 completed crash reports
+[72430:535554:0525/191905.756510:VERBOSE1:chrome/updater/crash_client.cc:132] Found 0 pending crash reports
+[72430:535554:0525/191905.756593:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/noel_/Library/Application Support/Google/RLZ/Crashpad/settings.dat: No such file or directory (2)
+[72430:535554:0525/191905.757009:VERBOSE1:chrome/updater/updater.cc:103] Crash reporting initialized.
+[72430:535566:0525/191905.757400:VERBOSE1:chrome/updater/app/app_wakeall.cc:58] Launching `/Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake`
+[72433:535570:0525/191905.766811:VERBOSE1:chrome/updater/updater.cc:352] Version: 149.0.7814.0, opt, ARM_64, command line: /Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[72433:535570:0525/191905.767014:VERBOSE1:chrome/updater/updater.cc:355] OS version: 26.3.1, arch: arm64, System uptime (seconds): 26349, parent pid: 72430
+[72433:535570:0525/191905.769166:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[72435:535574:0525/191905.778226:VERBOSE1:chrome/updater/updater.cc:352] Version: 149.0.7814.0, opt, ARM_64, command line: /Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --crash-handler --database=/Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/Crashpad --url=https://clients2.google.com/cr/report --annotation=prod=Update4 --annotation=ver=149.0.7814.0 --handshake-fd=6 --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[72435:535574:0525/191905.778458:VERBOSE1:chrome/updater/updater.cc:355] OS version: 26.3.1, arch: arm64, System uptime (seconds): 26349, parent pid: 1
+[72435:535574:0525/191905.782796:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[72433:535570:0525/191905.783276:VERBOSE1:chrome/updater/crash_reporter.cc:124] Crash handler launched and ready.
+[72433:535570:0525/191905.783942:VERBOSE1:chrome/updater/crash_client.cc:108] Found 0 completed crash reports
+[72433:535570:0525/191905.784033:VERBOSE1:chrome/updater/crash_client.cc:132] Found 0 pending crash reports
+[72433:535570:0525/191905.784101:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/noel_/Library/Application Support/Google/RLZ/Crashpad/settings.dat: No such file or directory (2)
+[72433:535570:0525/191905.784291:VERBOSE1:chrome/updater/updater.cc:103] Crash reporting initialized.
+[72433:535570:0525/191905.784467:VERBOSE1:chrome/updater/ipc/update_service_internal_proxy_mojo.cc:61] Run
+[72069:534172:0525/191912.681888:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[72433:535570:0525/191922.402433:VERBOSE1:chrome/updater/app/app.cc:52] Shutdown: 0
+[72433:535570:0525/191922.403754:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[72433:535570:0525/191922.403788:VERBOSE1:chrome/updater/updater.cc:390] UpdaterMain (--wake) returned 0.
+[72430:535566:0525/191922.546213:VERBOSE1:chrome/updater/app/app_wakeall.cc:68] `/Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake` exited 0
+[72430:535554:0525/191922.550821:VERBOSE1:chrome/updater/app/app.cc:52] Shutdown: 0
+[72430:535554:0525/191922.551580:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[72430:535554:0525/191922.551617:VERBOSE1:chrome/updater/updater.cc:390] UpdaterMain (--wake-all) returned 0.
+[72435:535574:0525/191932.413381:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[72435:535574:0525/191932.413477:VERBOSE1:chrome/updater/updater.cc:390] UpdaterMain (--crash-handler) returned 0.
+[72432:535558:0525/191932.414710:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[72432:535558:0525/191932.414741:VERBOSE1:chrome/updater/updater.cc:390] UpdaterMain (--crash-handler) returned 0.
+[72069:534172:0525/192006.819483:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[72069:534172:0525/192132.397919:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Trying to load the allocator multiple times. This is *not* supported.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1779729706.913508  541354 environment.cc:556] Selected adapter: Apple M1, arch=metal-3, vendor=apple, backend=Metal, adapterType=Integrated GPU
+I0000 00:00:1779729706.919370  541362 environment.cc:556] Selected adapter: Apple M1, arch=metal-3, vendor=apple, backend=Metal, adapterType=Integrated GPU
+[72085:534194:0525/192435.505126:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[72069:534172:0525/192454.706577:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[72069:534172:0525/193222.447563:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[72085:534194:0525/193224.046273:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[72085:534194:0525/193228.096914:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[72085:534194:0525/194435.888979:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[72085:534194:0525/194453.703231:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[72085:534194:0525/203131.314201:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[72085:534194:0525/204644.328755:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[72085:534194:0525/204649.578869:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[72085:534194:0525/204709.562049:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[72085:534194:0525/205828.708400:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[72085:534194:0525/205855.341577:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+
+DevTools listening on ws://127.0.0.1:9222/devtools/browser/091b042b-7b5b-4626-a5ef-facb7f2f3d0e
+Created TensorFlow Lite XNNPACK delegate for CPU.
+Trying to load the allocator multiple times. This is *not* supported.
+[2926:24267:0526/123602.158239:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[3070:25734:0526/123616.185565:VERBOSE1:chrome/updater/updater.cc:352] Version: 149.0.7814.0, opt, ARM_64, command line: /Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake-all --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[3070:25734:0526/123616.185808:VERBOSE1:chrome/updater/updater.cc:355] OS version: 26.3.1, arch: arm64, System uptime (seconds): 443, parent pid: 2926
+[3070:25734:0526/123616.187990:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[3072:25739:0526/123616.196551:VERBOSE1:chrome/updater/updater.cc:352] Version: 149.0.7814.0, opt, ARM_64, command line: /Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --crash-handler --database=/Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/Crashpad --url=https://clients2.google.com/cr/report --annotation=prod=Update4 --annotation=ver=149.0.7814.0 --handshake-fd=6 --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[3072:25739:0526/123616.196780:VERBOSE1:chrome/updater/updater.cc:355] OS version: 26.3.1, arch: arm64, System uptime (seconds): 443, parent pid: 1
+[3072:25739:0526/123616.198955:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[3070:25734:0526/123616.199334:VERBOSE1:chrome/updater/crash_reporter.cc:124] Crash handler launched and ready.
+[3070:25734:0526/123616.199939:VERBOSE1:chrome/updater/crash_client.cc:108] Found 0 completed crash reports
+[3070:25734:0526/123616.200020:VERBOSE1:chrome/updater/crash_client.cc:132] Found 0 pending crash reports
+[3070:25734:0526/123616.200095:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/noel_/Library/Application Support/Google/RLZ/Crashpad/settings.dat: No such file or directory (2)
+[3070:25734:0526/123616.200322:VERBOSE1:chrome/updater/updater.cc:103] Crash reporting initialized.
+[3070:25747:0526/123616.200568:VERBOSE1:chrome/updater/app/app_wakeall.cc:58] Launching `/Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake`
+[3073:25751:0526/123616.207948:VERBOSE1:chrome/updater/updater.cc:352] Version: 149.0.7814.0, opt, ARM_64, command line: /Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[3073:25751:0526/123616.208154:VERBOSE1:chrome/updater/updater.cc:355] OS version: 26.3.1, arch: arm64, System uptime (seconds): 443, parent pid: 3070
+[3073:25751:0526/123616.210165:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[3075:25755:0526/123616.217573:VERBOSE1:chrome/updater/updater.cc:352] Version: 149.0.7814.0, opt, ARM_64, command line: /Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --crash-handler --database=/Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/Crashpad --url=https://clients2.google.com/cr/report --annotation=prod=Update4 --annotation=ver=149.0.7814.0 --handshake-fd=6 --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[3075:25755:0526/123616.217803:VERBOSE1:chrome/updater/updater.cc:355] OS version: 26.3.1, arch: arm64, System uptime (seconds): 443, parent pid: 1
+[3075:25755:0526/123616.219840:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[3073:25751:0526/123616.220213:VERBOSE1:chrome/updater/crash_reporter.cc:124] Crash handler launched and ready.
+[3073:25751:0526/123616.220790:VERBOSE1:chrome/updater/crash_client.cc:108] Found 0 completed crash reports
+[3073:25751:0526/123616.220869:VERBOSE1:chrome/updater/crash_client.cc:132] Found 0 pending crash reports
+[3073:25751:0526/123616.220932:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/noel_/Library/Application Support/Google/RLZ/Crashpad/settings.dat: No such file or directory (2)
+[3073:25751:0526/123616.221127:VERBOSE1:chrome/updater/updater.cc:103] Crash reporting initialized.
+[3073:25751:0526/123616.221272:VERBOSE1:chrome/updater/ipc/update_service_internal_proxy_mojo.cc:61] Run
+[2926:24267:0526/123628.440642:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[3073:25751:0526/123632.743862:VERBOSE1:chrome/updater/app/app.cc:52] Shutdown: 0
+[3073:25751:0526/123632.745151:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[3073:25751:0526/123632.745215:VERBOSE1:chrome/updater/updater.cc:390] UpdaterMain (--wake) returned 0.
+[3070:25747:0526/123632.972964:VERBOSE1:chrome/updater/app/app_wakeall.cc:68] `/Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake` exited 0
+[3070:25734:0526/123632.973161:VERBOSE1:chrome/updater/app/app.cc:52] Shutdown: 0
+[3070:25734:0526/123632.973882:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[3070:25734:0526/123632.973967:VERBOSE1:chrome/updater/updater.cc:390] UpdaterMain (--wake-all) returned 0.
+[3075:25755:0526/123642.752992:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[3075:25755:0526/123642.753038:VERBOSE1:chrome/updater/updater.cc:390] UpdaterMain (--crash-handler) returned 0.
+[3072:25739:0526/123642.753825:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[3072:25739:0526/123642.753856:VERBOSE1:chrome/updater/updater.cc:390] UpdaterMain (--crash-handler) returned 0.
+[2926:24267:0526/123714.297115:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[2926:24267:0526/123852.723425:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[2926:24267:0526/124225.605307:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[2926:24267:0526/124801.538404:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[2935:24291:0526/125035.093535:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2935:24291:0526/130739.481341:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2935:24291:0526/130749.131694:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2935:24291:0526/132605.291483:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2936:24314:0526/132942.845002:ERROR:net/socket/ssl_client_socket_impl.cc:924] handshake failed; returned -1, SSL error code 1, net_error -113
+[2936:24314:0526/132942.894029:ERROR:net/socket/ssl_client_socket_impl.cc:924] handshake failed; returned -1, SSL error code 1, net_error -113
+[2936:24314:0526/132944.288921:ERROR:net/socket/ssl_client_socket_impl.cc:924] handshake failed; returned -1, SSL error code 1, net_error -202
+[2935:24291:0526/150258.358749:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2935:24291:0526/161158.327849:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2935:24291:0526/172642.694325:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[2935:24291:0526/173046.091169:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:253] SharedImageManager::ProduceSkia: Trying to Produce a Skia representation from a non-existent mailbox.
+[54115:380695:0526/173716.328616:VERBOSE1:chrome/updater/updater.cc:352] Version: 149.0.7814.0, opt, ARM_64, command line: /Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake-all --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[54115:380695:0526/173716.329002:VERBOSE1:chrome/updater/updater.cc:355] OS version: 26.3.1, arch: arm64, System uptime (seconds): 18503, parent pid: 2926
+[54115:380695:0526/173716.331393:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[54117:380700:0526/173716.340554:VERBOSE1:chrome/updater/updater.cc:352] Version: 149.0.7814.0, opt, ARM_64, command line: /Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --crash-handler --database=/Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/Crashpad --url=https://clients2.google.com/cr/report --annotation=prod=Update4 --annotation=ver=149.0.7814.0 --handshake-fd=6 --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[54117:380700:0526/173716.340785:VERBOSE1:chrome/updater/updater.cc:355] OS version: 26.3.1, arch: arm64, System uptime (seconds): 18503, parent pid: 1
+[54117:380700:0526/173716.343279:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[54115:380695:0526/173716.343724:VERBOSE1:chrome/updater/crash_reporter.cc:124] Crash handler launched and ready.
+[54115:380695:0526/173716.344350:VERBOSE1:chrome/updater/crash_client.cc:108] Found 0 completed crash reports
+[54115:380695:0526/173716.344428:VERBOSE1:chrome/updater/crash_client.cc:132] Found 0 pending crash reports
+[54115:380695:0526/173716.344495:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/noel_/Library/Application Support/Google/RLZ/Crashpad/settings.dat: No such file or directory (2)
+[54115:380695:0526/173716.344708:VERBOSE1:chrome/updater/updater.cc:103] Crash reporting initialized.
+[54115:380708:0526/173716.344985:VERBOSE1:chrome/updater/app/app_wakeall.cc:58] Launching `/Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake`
+[54118:380712:0526/173716.352995:VERBOSE1:chrome/updater/updater.cc:352] Version: 149.0.7814.0, opt, ARM_64, command line: /Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[54118:380712:0526/173716.353218:VERBOSE1:chrome/updater/updater.cc:355] OS version: 26.3.1, arch: arm64, System uptime (seconds): 18503, parent pid: 54115
+[54118:380712:0526/173716.355806:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[54120:380716:0526/173716.366534:VERBOSE1:chrome/updater/updater.cc:352] Version: 149.0.7814.0, opt, ARM_64, command line: /Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --crash-handler --database=/Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/Crashpad --url=https://clients2.google.com/cr/report --annotation=prod=Update4 --annotation=ver=149.0.7814.0 --handshake-fd=6 --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[54120:380716:0526/173716.366802:VERBOSE1:chrome/updater/updater.cc:355] OS version: 26.3.1, arch: arm64, System uptime (seconds): 18503, parent pid: 1
+[54120:380716:0526/173716.369039:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[54118:380712:0526/173716.369556:VERBOSE1:chrome/updater/crash_reporter.cc:124] Crash handler launched and ready.
+[54118:380712:0526/173716.370394:VERBOSE1:chrome/updater/crash_client.cc:108] Found 0 completed crash reports
+[54118:380712:0526/173716.370476:VERBOSE1:chrome/updater/crash_client.cc:132] Found 0 pending crash reports
+[54118:380712:0526/173716.370548:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/noel_/Library/Application Support/Google/RLZ/Crashpad/settings.dat: No such file or directory (2)
+[54118:380712:0526/173716.370765:VERBOSE1:chrome/updater/updater.cc:103] Crash reporting initialized.
+[54118:380712:0526/173716.370929:VERBOSE1:chrome/updater/ipc/update_service_internal_proxy_mojo.cc:61] Run
+[54118:380712:0526/173732.620231:VERBOSE1:chrome/updater/app/app.cc:52] Shutdown: 0
+[54118:380712:0526/173732.621332:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[54118:380712:0526/173732.621392:VERBOSE1:chrome/updater/updater.cc:390] UpdaterMain (--wake) returned 0.
+[54115:380708:0526/173732.840928:VERBOSE1:chrome/updater/app/app_wakeall.cc:68] `/Users/noel_/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake` exited 0
+[54115:380695:0526/173732.841166:VERBOSE1:chrome/updater/app/app.cc:52] Shutdown: 0
+[54115:380695:0526/173732.841754:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[54115:380695:0526/173732.841799:VERBOSE1:chrome/updater/updater.cc:390] UpdaterMain (--wake-all) returned 0.
+[54120:380716:0526/173742.632597:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[54120:380716:0526/173742.632668:VERBOSE1:chrome/updater/updater.cc:390] UpdaterMain (--crash-handler) returned 0.
+[54117:380700:0526/173742.634193:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[54117:380700:0526/173742.634257:VERBOSE1:chrome/updater/updater.cc:390] UpdaterMain (--crash-handler) returned 0.
+[2926:24219:0526/190803.974173:ERROR:ui/compositor/compositor_animation_observer.cc:65] CompositorAnimationObserver is active for too long (509.724s) location=StatusViewAnimation@chrome/browser/ui/views/status_bubble_views.cc:623
+[2926:24263:0526/203612.436068:ERROR:net/disk_cache/simple/simple_index_file.cc:331] Failed to write the temporary index file

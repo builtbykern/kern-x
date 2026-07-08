@@ -1,1 +1,3 @@
-Run runtime/post.RUN.md. State: state/. Logs: logs/posts.json. Record via scripts/record_post.py. No other files. No repo search.
+Run runtime/post.RUN.md. State: state/. Log: logs/posts.json. No other files.
+
+Phoenix hint: X algo rewards two-way threads. On take (Thu), ecosystem (Sat), and recap (Sun) days — end the post with a short open question that invites builders to reply (e.g. "what's the smallest control you regret not exposing?"). Keep it natural, not bait. On clip (Mon), spotlight (Wed), before_after (Fri) — no question, just the observation.

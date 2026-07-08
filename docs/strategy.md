@@ -13,7 +13,7 @@
 | Lane | Runtime | Frequency | Links |
 |------|---------|-----------|-------|
 | A — Originals | `post.RUN.md` | 1/day | When `today.link` set |
-| B — Replies | `reply-cycle.RUN.md` | 10–14 cycles/day, max 3 replies/cycle | Never |
+| B — Replies | `reply-cycle.RUN.md` | 14–20 cycles/day (60–90 min jitter), max 3 replies/cycle | Never |
 
 ## Weekly calendar
 
@@ -42,6 +42,28 @@ Built by `scripts/build_week.py` from BuiltByKern listings path in `config/local
 
 - `voice/voice-compact.txt` (runtime)
 - Full examples: port from BuiltByKern `Automation/accio-work/voice-anchors.md` if needed
+
+## Phoenix-aware engagement (May 2026)
+
+Based on xAI's open-source X algorithm release. See [`docs/x-algorithm-engagement.md`](x-algorithm-engagement.md) for full notes.
+
+**Core insight:** an author replying back to your reply carries ~150× the weight of a like in the Phoenix ranking model. Two-way threads are the #1 signal.
+
+**Reply strategy:**
+- Write so the author might reply back — short reaction + optional tiny question
+- Empathy on struggle posts (validate, no advice, no questions)
+- Referral max 1 link/cycle (Cursor or Framer only — when the post topic matches; see voice-compact), never combined with a question
+- Implicit tease of own work (1st person, no link) max 1/cycle
+- 7-day cooldown per handle (Phoenix author diversity penalty)
+
+**Originals strategy:**
+- Thu/Sat/Sun posts end with an open question to invite builder replies
+- Mon/Wed/Fri focus on craft observation, no forced question
+- Wednesday spotlight enters "warm" — Mon/Tue replies already boosted the profile
+
+**Metrics:**
+- Author reply-back rate (target ≥ 25%, tracked by `scripts/x_reply_back_check.py`)
+- Referrals/day (tracked in `state/daily-caps.json`, cap: 2)
 
 ## Launch sync
 

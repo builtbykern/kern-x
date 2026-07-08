@@ -1,0 +1,37 @@
+{
+  "name": "KERN-Reply",
+  "description": "@builtbykern X engagement — reply-cycle.RUN, hourly 08:00–22:00, browser + state/logs",
+  "workflow": {
+    "prompts": [
+      {
+        "text": "KERN-Reply: Run runtime/reply-cycle.RUN.md exactly. Allowlist: state/*.json, voice/voice-compact.txt, logs/replies.json (last 20 only). No repo search.\n\nUse Browser for X (logged in as @builtbykern). If not logged in → posted_n: 0, reasons: error, stop.\n\nAfter each reply: python3 scripts/record_reply.py --handle @user --post-url URL --text \"reply\" (add --bump-rotation on last reply only).\n\nOne search query from state/query-rotation.json. Max 3 replies. 45-120s between replies. English only per voice/voice-compact.txt.\n\nOutput exactly 6 lines: posted_n, urls, skipped_n, reasons, replies_total, next_query."
+      }
+    ],
+    "triggers": [
+      {
+        "schedule": {
+          "cron": "0 8-22 * * *",
+          "timezone": "America/New_York"
+        }
+      }
+    ],
+    "model": "composer-2.5",
+    "memoryEnabled": false,
+    "gitConfig": {
+      "repositories": [
+        {
+          "url": "https://github.com/builtbykern/kern-x",
+          "branch": "main"
+        }
+      ]
+    },
+    "agentOptions": {
+      "enableBrowser": true
+    }
+  },
+  "notes": {
+    "cron": "Hourly 8am–10pm America/New_York (~15 cycles/day). Accio used 75–105m jitter; tighten cron in UI if needed.",
+    "github": "Push kern-x to GitHub and set the repo URL in automation settings before enabling.",
+    "browser": "Cloud runs may not keep X login — prefer Desktop Agent + /loop if replies fail with login errors. See automations/KERN-REPLY-SETUP.md"
+  }
+}
