@@ -1,3 +1,13 @@
+/**
+ * CMS Spotlight Gallery
+ * https://www.framer.com/marketplace/
+ *
+ * @framerSupportedLayoutWidth any
+ * @framerSupportedLayoutHeight any
+ * @framerIntrinsicWidth 1200
+ * @framerIntrinsicHeight 640
+ */
+
 import { addPropertyControls, ControlType } from "framer"
 import {
   useCallback,

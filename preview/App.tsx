@@ -1,6 +1,6 @@
-import CMSSpotlightGallery from "../components/CMSSpotlightGallery"
-import PathTypeKinetic from "../components/PathTypeKinetic"
-import ScrollStoryStage from "../components/ScrollStoryStage"
+import CMSSpotlightGallery from "../code/CMSSpotlightGallery"
+import PathTypeKinetic from "../code/PathTypeKinetic"
+import ScrollStoryStage from "../code/ScrollStoryStage"
 
 export function App() {
   return (
@@ -80,8 +80,8 @@ export function App() {
           fontSize: 14,
         }}
       >
-        Copy the files in <code>/components</code> into a Framer project Code
-        folder to publish.
+        Open each file in <code>/code</code> → copy all → Framer Assets → Code →
+        New Component → paste.
       </footer>
     </>
   )

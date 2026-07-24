@@ -1,14 +1,28 @@
-# kern-x — Framer Marketplace Components
+# kern-x — Framer Code Components
 
-Three Framer code components aimed at **Featured** placement and high views:
+Framer-ready code files live in [`code/`](code/):
 
-| Component | Category | Price target | File |
-|---|---|---|---|
-| **Scroll Story Stage** | Interactions | $19 | [`components/ScrollStoryStage.tsx`](components/ScrollStoryStage.tsx) |
-| **PathType Kinetic** | Typography | $12 | [`components/PathTypeKinetic.tsx`](components/PathTypeKinetic.tsx) |
-| **CMS Spotlight Gallery** | Carousels | Free / $9 | [`components/CMSSpotlightGallery.tsx`](components/CMSSpotlightGallery.tsx) |
+| Code file | Category | Price target |
+|---|---|---|
+| [`code/ScrollStoryStage.tsx`](code/ScrollStoryStage.tsx) | Interactions | $19 |
+| [`code/PathTypeKinetic.tsx`](code/PathTypeKinetic.tsx) | Typography | $12 |
+| [`code/CMSSpotlightGallery.tsx`](code/CMSSpotlightGallery.tsx) | Carousels | Free / $9 |
 
-Marketplace copy lives in [`listings/`](listings/).
+Marketplace copy: [`listings/`](listings/).
+
+## Add to a Framer project (Code files)
+
+Each file is a self-contained Framer Code Component (`export default` + `addPropertyControls` + layout annotations).
+
+1. Open your Framer project
+2. **Assets → Code → + → New Component**
+3. Name it to match the file (`ScrollStoryStage`, `PathTypeKinetic`, `CMSSpotlightGallery`)
+4. Paste the full contents of the matching `.tsx` from `/code`
+5. Save — the component appears in Assets and can be dropped on the canvas
+
+Repeat for all three files.
+
+Optional sync: use [Framer Code Link](https://www.npmjs.com/package/framer-code-link) or a Code Sync plugin to push the `/code` folder into the project instead of pasting.
 
 ## Local preview
 
@@ -17,17 +31,7 @@ npm install
 npm run dev
 ```
 
-Open the Vite preview, then scroll through all three demos.
-
-## Publish into Framer
-
-1. Create/open a Framer project
-2. Assets → Code → New Component
-3. Paste the contents of each `.tsx` file (Framer provides `framer` + `framer-motion`)
-4. Build a live preview page with **one** component instance (per listing best practices)
-5. Publish via Community → Post → Component using the matching listing markdown
-
-Each component is a **single self-contained `.tsx` file** (no shared imports). Outside Framer, `shared/framer-shim.ts` stubs `addPropertyControls` / `ControlType` for local typecheck and preview.
+Outside Framer, `shared/framer-shim.ts` stubs `addPropertyControls` / `ControlType`.
 
 ## Scripts
 

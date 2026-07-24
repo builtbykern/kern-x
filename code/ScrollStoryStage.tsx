@@ -1,3 +1,13 @@
+/**
+ * Scroll Story Stage
+ * https://www.framer.com/marketplace/
+ *
+ * @framerSupportedLayoutWidth any
+ * @framerSupportedLayoutHeight any
+ * @framerIntrinsicWidth 1200
+ * @framerIntrinsicHeight 800
+ */
+
 import { addPropertyControls, ControlType } from "framer"
 import {
   motion,
