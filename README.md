@@ -27,7 +27,7 @@ Open the Vite preview, then scroll through all three demos.
 4. Build a live preview page with **one** component instance (per listing best practices)
 5. Publish via Community → Post → Component using the matching listing markdown
 
-Outside Framer, `shared/framer-shim.ts` stubs `addPropertyControls` / `ControlType` for local typecheck and preview.
+Each component is a **single self-contained `.tsx` file** (no shared imports). Outside Framer, `shared/framer-shim.ts` stubs `addPropertyControls` / `ControlType` for local typecheck and preview.
 
 ## Scripts
 

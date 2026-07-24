@@ -9,7 +9,23 @@ import {
   type KeyboardEvent,
   type PointerEvent as ReactPointerEvent,
 } from "react"
-import { clamp, usePrefersReducedMotion } from "../shared/motion"
+
+function clamp(value: number, min: number, max: number): number {
+  return Math.min(max, Math.max(min, value))
+}
+
+function usePrefersReducedMotion(): boolean {
+  const [reduced, setReduced] = useState(false)
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
+    const update = () => setReduced(mq.matches)
+    update()
+    mq.addEventListener("change", update)
+    return () => mq.removeEventListener("change", update)
+  }, [])
+  return reduced
+}
 
 export interface GalleryItem {
   title?: string

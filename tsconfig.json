@@ -16,5 +16,5 @@
       "framer": ["shared/framer-shim.ts"]
     }
   },
-  "include": ["components", "shared", "preview", "vite.config.ts"]
+  "include": ["components/**/*.tsx", "shared", "preview", "vite.config.ts"]
 }
