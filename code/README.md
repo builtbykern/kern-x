@@ -1,9 +1,13 @@
-# Framer Code files
+# Framer Code files (handoff)
 
 Paste each file into **Framer → Assets → Code → New Component**.
 
-- `ScrollStoryStage.tsx`
-- `PathTypeKinetic.tsx`
-- `CMSSpotlightGallery.tsx`
+| File | Category | Job |
+|---|---|---|
+| `StatCountUp.tsx` | Data | Metric counter (SaaS / portfolio) |
+| `LogoMarquee.tsx` | Carousels | Trusted-by logo strip |
+| `PageProgress.tsx` | Interactions | Reading progress bar |
 
-These are standalone Code Components: `export default`, `addPropertyControls`, and `@framerSupportedLayout*` annotations. No local imports between files.
+Each file is standalone: `export default`, `addPropertyControls`, layout annotations. No shared imports.
+
+Listings: `../listings/`

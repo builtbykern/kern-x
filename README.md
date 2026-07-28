@@ -1,28 +1,20 @@
-# kern-x — Framer Code Components
+# kern-x — Framer handoff (simple components)
 
-Framer-ready code files live in [`code/`](code/):
+Three simple, useful Framer Code Components ready to copy into another repo / Framer project:
 
-| Code file | Category | Price target |
-|---|---|---|
-| [`code/ScrollStoryStage.tsx`](code/ScrollStoryStage.tsx) | Interactions | $19 |
-| [`code/PathTypeKinetic.tsx`](code/PathTypeKinetic.tsx) | Typography | $12 |
-| [`code/CMSSpotlightGallery.tsx`](code/CMSSpotlightGallery.tsx) | Carousels | Free / $9 |
+| Code file | Category | Price | Job |
+|---|---|---|---|
+| [`code/StatCountUp.tsx`](code/StatCountUp.tsx) | Data | Free / $5 | Metrics count-up |
+| [`code/LogoMarquee.tsx`](code/LogoMarquee.tsx) | Carousels | Free / $5–9 | Trusted-by logos |
+| [`code/PageProgress.tsx`](code/PageProgress.tsx) | Interactions | Free | Reading progress |
 
 Marketplace copy: [`listings/`](listings/).
 
-## Add to a Framer project (Code files)
+## Add to Framer
 
-Each file is a self-contained Framer Code Component (`export default` + `addPropertyControls` + layout annotations).
-
-1. Open your Framer project
-2. **Assets → Code → + → New Component**
-3. Name it to match the file (`ScrollStoryStage`, `PathTypeKinetic`, `CMSSpotlightGallery`)
-4. Paste the full contents of the matching `.tsx` from `/code`
-5. Save — the component appears in Assets and can be dropped on the canvas
-
-Repeat for all three files.
-
-Optional sync: use [Framer Code Link](https://www.npmjs.com/package/framer-code-link) or a Code Sync plugin to push the `/code` folder into the project instead of pasting.
+1. Assets → Code → New Component  
+2. Paste the matching `.tsx` from `/code`  
+3. Drop on canvas  
 
 ## Local preview
 
@@ -31,10 +23,8 @@ npm install
 npm run dev
 ```
 
-Outside Framer, `shared/framer-shim.ts` stubs `addPropertyControls` / `ControlType`.
-
 ## Scripts
 
-- `npm run dev` — preview playground
-- `npm run typecheck` — TypeScript check
-- `npm run build` — typecheck + Vite production build of the preview
+- `npm run dev` — preview
+- `npm run typecheck` — TypeScript
+- `npm run build` — typecheck + Vite build
