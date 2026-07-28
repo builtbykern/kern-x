@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kern-x — Framer Components Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=IBM+Plex+Sans:wght@400;500&family=Instrument+Sans:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #12201c;
+        --mist: #eef2ef;
+        --sand: #f7f3ea;
+        --accent: #0f6b5c;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", system-ui, sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(1200px 600px at 10% -10%, rgba(15, 107, 92, 0.12), transparent 60%),
+          radial-gradient(900px 500px at 100% 0%, rgba(232, 255, 106, 0.18), transparent 55%),
+          var(--mist);
+      }
+      a { color: inherit; }
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        padding: 14px 20px;
+        backdrop-filter: blur(10px);
+        background: rgba(238, 242, 239, 0.82);
+        border-bottom: 1px solid rgba(18, 32, 28, 0.08);
+      }
+      .nav a {
+        text-decoration: none;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 8px 12px;
+        border: 1px solid rgba(18, 32, 28, 0.18);
+        border-radius: 999px;
+      }
+      .nav a:hover { background: rgba(15, 107, 92, 0.08); }
+      .hero {
+        padding: 72px 24px 40px;
+        max-width: 920px;
+        margin: 0 auto;
+      }
+      .brand {
+        font-family: "Instrument Sans", system-ui, sans-serif;
+        font-size: clamp(2.5rem, 7vw, 4.5rem);
+        font-weight: 700;
+        letter-spacing: -0.045em;
+        margin: 0 0 12px;
+        line-height: 0.95;
+      }
+      .lede {
+        margin: 0;
+        max-width: 36rem;
+        font-size: 1.125rem;
+        line-height: 1.5;
+        color: rgba(18, 32, 28, 0.72);
+      }
+      .section-label {
+        padding: 48px 24px 12px;
+        max-width: 1100px;
+        margin: 0 auto;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .section-title {
+        padding: 0 24px 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+        font-family: "Instrument Sans", system-ui, sans-serif;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        letter-spacing: -0.03em;
+      }
+      .pad {
+        padding: 0 0 64px;
+      }
+      .path-wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px;
+        background:
+          linear-gradient(135deg, rgba(255,255,255,0.7), rgba(247,243,234,0.9));
+        border-top: 1px solid rgba(18,32,28,0.06);
+        border-bottom: 1px solid rgba(18,32,28,0.06);
+        min-height: 280px;
+        display: flex;
+        align-items: center;
+      }
+      .spacer {
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(18,32,28,0.45);
+        font-size: 14px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/main.tsx"></script>
+  </body>
+</html>
