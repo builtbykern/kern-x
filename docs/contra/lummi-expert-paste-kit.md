@@ -103,26 +103,32 @@ Publish. Confirm the service shows **Lummi** as a tool.
 4. `05-street-blue-hour.jpg` — caption: Street, blue hour  
 5. Optional: 1–2 screenshots of the live site (browser, homepage + a property)
 
-**Body (paste).** After each heading, insert the matching Image block.
+**Body (paste).** Insert `/` → Image after **Images from Lummi** (01, 03, 04, 05). Optional screenshots after **Live**.
 
 ```
 **About Arbour**
-Arbour is an independent estate agency for London and the country — quiet type, slow scroll, properties as a considered portfolio. Discretion, not theatre.
+Arbour is an independent estate agency for London and the country. Quiet surfaces, considered pacing, homes sold with discretion — never theatre.
+
+The site had to feel like the work: Chelsea brick, river light, country stone. A portfolio you walk through, not a grid of stock listings.
 
 **The brief**
-A Framer site that feels like the houses: Chelsea brick, river light, country stone. No generic stock. One visual world from home to listings.
+Design and build a custom Framer site from scratch. Original layout — not a template restyle.
+
+One visual world from home to properties, neighbourhoods, notes, and enquiry. No mixed stock. Photography that could hold a luxury brief without looking staged.
 
 **What I built**
-Designed and built in Framer: structure, listings, neighbourhoods, notes, and a viewing flow. Original layout — not a template restyle.
+Structure, type, and motion in Framer. Listings as a considered portfolio. Neighbourhoods, journal notes, and a private viewing flow. Desktop, tablet, and mobile.
 
 Live: https://arbour.framer.website
 
 **Images from Lummi**
-Every still on the site was generated in Lummi — facades, rooms, streets, the same light and materials so it doesn’t read as mixed stock. Direction also lives on my Lummi creator profile.
+Every still on the site was generated in Lummi: facades, rooms, streets, the same light and materials so nothing reads as a random library.
+
+I set the direction (quiet architecture, one palette), generated and selected the set, then placed it in the canvas. The same work lives on my Lummi creator profile.
 
 https://www.lummi.ai/creator/builtbykern
 
-The stills below are the same set placed in the site. The full grid is a separate case study.
+Stills from the site below. The full set is a separate case study.
 ```
 
 Then add Image blocks 01, 03, 04, 05 (and screenshots).
