@@ -17,13 +17,29 @@ if (!apiKey) {
 
 const prompt = readFileSync(promptPath, "utf8");
 const cwd = process.env.KERN_X_ROOT || process.cwd();
-const modelId = process.env.X_COMPOSE_MODEL || "gemini-3.5-flash";
+const modelId = process.env.X_COMPOSE_MODEL || "default";
 
-const result = await Agent.prompt(prompt, {
-  apiKey,
-  model: { id: modelId },
-  local: { cwd },
-});
+let result;
+try {
+  result = await Agent.prompt(prompt, {
+    apiKey,
+    model: { id: modelId },
+    // LaunchAgent / headless hosts often lack Cursor sandbox support
+    local: { cwd, sandboxOptions: { enabled: false } },
+  });
+} catch (err) {
+  console.error(String(err?.stack || err));
+  process.exit(1);
+}
 
 const text = (result.result ?? "").trim();
-process.stdout.write(text);
+if (!text) {
+  console.error("cursor compose empty result:", JSON.stringify(result).slice(0, 500));
+  process.exit(1);
+}
+// Strip accidental markdown fences so Python json.loads succeeds
+let out = text;
+if (out.startsWith("```")) {
+  out = out.split("\n").slice(1).join("\n").replace(/```\s*$/, "").trim();
+}
+process.stdout.write(out);

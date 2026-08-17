@@ -6,8 +6,11 @@ Run **Sunday** after `python3 scripts/build_week.py`. Use Cursor chat in kern-x 
 
 - Posts published vs `cap_posts` (7/week target)
 - Replies vs `cap_replies` ramp
+- Author reply-back rate from `state/reply-back-stats.json` (target ≥ 25%)
+- Follow-ups posted vs reply-backs detected
 - `dup` / `thin` / `coord` skip rates from cycle outputs
 - Handles in `state/cooldown-handles.json` growth
+- Originals: video attach rate on clip / before_after / spotlight (avoid link-only OG)
 
 ## Adjust
 

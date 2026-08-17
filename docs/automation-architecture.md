@@ -96,7 +96,7 @@ Or `/loop` with prompt: “Run `python3 scripts/x_reply_cycle.py` only; no brows
 `voice/voice-compact.txt` drives compose:
 
 - Encourage Framer templates, components, marketplace ships, and `#FramerChallenge` progress (specific craft, no hype words).
-- Optional **Cursor referral** (`config` → `cursor_referral_url`): max 1 per cycle, only when the post is about AI tooling or Framer custom code — peer tone, not an ad.
+- Optional **Framer referral** (`config` → `framer_referral_url`): max 1 per cycle, only on builder-choice posts (Framer vs Webflow / worth it) — peer tone, not an ad. Cursor referral program ended (`cursor_referral_url` stays empty; strip any `cursor.com/referral` if the model invents one).
 
 ## Token budget
 

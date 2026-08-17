@@ -24,6 +24,8 @@ Standalone repo for @builtbykern X automation. Do not treat BuiltByKern componen
 - After post/reply: run `scripts/record_post.py` or `scripts/record_reply.py` OR update state/logs exactly as RUN specifies
 - Stop on login/captcha/verification — `status: error`, no retry
 - Browser execution: user must be logged in as @builtbykern (see `docs/setup-cursor.md`)
+- **One X tab only** — never open a new browser/tab for posts or replies. Reuse the daemon session (`com.builtbykern.kern-reply`) or `get_work_page`; `--storage` one-shots default to keep-browser. Do not spawn ad-hoc Chromium windows.
+- **Engagement is proactive** — do not ask when to run reply cycles. Goal: max useful engagement in Framer + design. Stay within daily caps; prefer Framer/marketplace/design accounts; keep going when compose/browser is healthy.
 
 ## Sunday (human)
 
@@ -32,3 +34,13 @@ python3 scripts/build_week.py
 ```
 
 Optional: `docs/weekly-review.md`
+
+## Framer Community (human)
+
+Post copy and queue: `docs/framer-community/`, `state/framer-community-catalog.json`, `state/framer-community-queue.json`.
+Arbour WIP warmup (stills, offset from X): `docs/framer-community/arbour-warmup.md`, `state/arbour-community-queue.json`.
+Regenerate component posts: `python3 scripts/sync_framer_community_posts.py`. Not for cron agents.
+
+## Arbour template warmup (human)
+
+WIP multi-day X schedule (no launch): `docs/arbour-warmup.md`, `state/arbour-warmup-queue.json`. After Sunday `build_week.py`, overlay with `python3 scripts/apply_arbour_warmup.py`. Not for cron agents unless `week-current` already has Arbour `today.copy` / `today.media`.

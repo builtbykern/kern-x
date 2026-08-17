@@ -1,0 +1,242 @@
+{
+  "seller": "BuiltByKern",
+  "profile": "https://www.framer.com/@builtbykern/?tab=marketplace",
+  "cadence_days": "2-3",
+  "invite_url": "https://www.framer.com/community/join?invite=y0MfazGKzAWL",
+  "components": [
+    {
+      "id": "kinetic-line",
+      "name": "Kinetic Line",
+      "slug": "kinetic-line",
+      "category": "Interactions",
+      "tagline": "Kinetic line/divider physics—bend",
+      "preview_url": "https://framer.link/9FKl60Z",
+      "in_marketplace": true
+    },
+    {
+      "id": "inertia-grid",
+      "name": "InertiaGrid",
+      "slug": "inertiagrid",
+      "category": "Gallery",
+      "tagline": "Physics-driven media grid with inertia hover",
+      "preview_url": null,
+      "in_marketplace": true
+    },
+    {
+      "id": "circlecards",
+      "name": "CircleCards",
+      "slug": "circlecards",
+      "category": "Interactions",
+      "tagline": "Circular 3D card ring with physics",
+      "preview_url": null,
+      "in_marketplace": true
+    },
+    {
+      "id": "letter-roll-menu",
+      "name": "LetterRollMenu",
+      "slug": "letterrollmenu",
+      "category": "Navigation",
+      "tagline": "Editorial vertical menu with per-letter motion",
+      "preview_url": null,
+      "in_marketplace": true
+    },
+    {
+      "id": "infinite-carousel-3d",
+      "name": "InfiniteCarousel3D",
+      "slug": "infinitecarousel3d",
+      "category": "Carousels",
+      "tagline": "Cinematic 3D infinite media carousel",
+      "preview_url": null,
+      "in_marketplace": true
+    },
+    {
+      "id": "scrolling-blur",
+      "name": "Scrolling Blur",
+      "slug": "scrolling-blur",
+      "category": "Interactions",
+      "tagline": "Soft backdrop blur chrome for nav or footer",
+      "preview_url": null,
+      "in_marketplace": true
+    },
+    {
+      "id": "wave-dot-link",
+      "name": "Wave Dot Link",
+      "slug": "wave-dot-link",
+      "category": "Buttons",
+      "tagline": "A traveling marker that waves",
+      "preview_url": "https://framer.link/ufE5Qk4",
+      "in_marketplace": true
+    },
+    {
+      "id": "marker-highlight",
+      "name": "MarkerHighlight",
+      "slug": "markerhighlight",
+      "category": "Typography",
+      "tagline": "Marker-style highlights over headline words",
+      "preview_url": null,
+      "in_marketplace": true
+    },
+    {
+      "id": "flowing-menu",
+      "name": "FlowingMenu",
+      "slug": "flowingmenu",
+      "category": "Navigation",
+      "tagline": "Nav rows with directional reveals and marquee",
+      "preview_url": null,
+      "in_marketplace": true
+    },
+    {
+      "id": "kinetic-grid",
+      "name": "Kinetic Grid",
+      "slug": "kinetic-grid",
+      "category": "Layout",
+      "tagline": "Kinetic grid with string physics",
+      "preview_url": "https://framer.link/UlKKQnq",
+      "in_marketplace": true
+    },
+    {
+      "id": "corner-scroller",
+      "name": "Corner Scroller",
+      "slug": "corner-scroller",
+      "category": "Scroll",
+      "tagline": "Pinned corner project scroller",
+      "preview_url": null,
+      "in_marketplace": true
+    },
+    {
+      "id": "spiral-3d-gallery",
+      "name": "Spiral 3D Gallery",
+      "slug": "spiral-3d-gallery",
+      "category": "Carousels",
+      "tagline": "Cinematic 3D spiral gallery",
+      "preview_url": null,
+      "in_marketplace": true
+    },
+    {
+      "id": "curvy-showcase",
+      "name": "Curvy Showcase",
+      "slug": "curvy-showcase",
+      "category": "Carousels",
+      "tagline": "Bowl ribbon portfolio showcase",
+      "preview_url": null,
+      "in_marketplace": true
+    },
+    {
+      "id": "the-scroller",
+      "name": "TheScroller",
+      "slug": "kern-thescroller",
+      "category": "Carousels",
+      "tagline": "Premium 3D scroll slider",
+      "preview_url": null,
+      "in_marketplace": true
+    },
+    {
+      "id": "zoom-image-intro",
+      "name": "Zoom-Image Intro",
+      "slug": "zoom-image-intro",
+      "category": "Layout",
+      "tagline": "Fullscreen zoom-image preloader",
+      "preview_url": "https://framer.link/PG4L7WV",
+      "in_marketplace": true
+    },
+    {
+      "id": "quote-intake",
+      "name": "Quote Intake",
+      "slug": "quote-intake",
+      "category": "Forms",
+      "tagline": "Multi-step quote calculator with live range",
+      "preview_url": "https://framer.link/puCPcPg",
+      "in_marketplace": true
+    },
+    {
+      "id": "filling-point",
+      "name": "Filling Point",
+      "slug": "filling-point",
+      "category": "Buttons",
+      "tagline": "Cinematic pointer-origin fill for CTAs",
+      "preview_url": "https://framer.link/BPI56ka",
+      "in_marketplace": true
+    },
+    {
+      "id": "glyph-ink",
+      "name": "Glyph Ink",
+      "slug": "glyph-ink",
+      "category": "Typography",
+      "tagline": "Pointer-origin ink for headlines",
+      "preview_url": "https://framer.link/spaxn6C",
+      "in_marketplace": true
+    },
+    {
+      "id": "metric-seal",
+      "name": "Metric Seal",
+      "slug": "metric-seal",
+      "category": "Data",
+      "tagline": "Ink seals the metric on enter",
+      "preview_url": "https://framer.link/h5lRzNs",
+      "in_marketplace": true
+    },
+    {
+      "id": "drift-plane",
+      "name": "Drift Plane",
+      "slug": "drift-plane",
+      "category": "Gallery",
+      "tagline": "Infinite flying image plane with drift + parallax",
+      "preview_url": "https://framer.link/DV7ph9v",
+      "in_marketplace": true
+    },
+    {
+      "id": "copy-field",
+      "name": "Copy Field",
+      "slug": "copy-field",
+      "category": "Utilities",
+      "tagline": "Reveal a masked value, then copy",
+      "preview_url": "https://framer.link/kf8ROzJ",
+      "in_marketplace": true
+    },
+    {
+      "id": "contact-dock",
+      "name": "Contact Dock",
+      "slug": "contact-dock",
+      "category": "Interactions",
+      "tagline": "Orb that opens a hello sheet",
+      "preview_url": "https://framer.link/OLAQE0Z",
+      "in_marketplace": true
+    },
+    {
+      "id": "video-ring",
+      "name": "Video Ring",
+      "slug": "video-ring",
+      "category": "Utilities",
+      "tagline": "Video with a floating play/pause",
+      "preview_url": "https://framer.link/sGV69QU",
+      "in_marketplace": true
+    },
+    {
+      "id": "morph-dropdown",
+      "name": "Morph Dropdown",
+      "slug": "morph-dropdown",
+      "category": "Navigation",
+      "tagline": "Liquid-morph dropdown — gooey open",
+      "preview_url": "https://framer.link/mZkAB9F",
+      "in_marketplace": true
+    },
+    {
+      "id": "hold-confirm",
+      "name": "Hold Confirm",
+      "slug": "hold-confirm",
+      "category": "Buttons",
+      "tagline": "Hold to commit — release cancels",
+      "preview_url": "https://framer.link/jCaqr0L",
+      "in_marketplace": true
+    },
+    {
+      "id": "access-code",
+      "name": "Access Code",
+      "slug": "access-code",
+      "category": "Utilities",
+      "tagline": "Invite / OTP field — paste works",
+      "preview_url": "https://framer.link/x0ekBXf",
+      "in_marketplace": true
+    }
+  ]
+}

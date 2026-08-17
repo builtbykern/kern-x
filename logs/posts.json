@@ -1,3 +1,202 @@
 {
-  "entries": []
+  "entries": [
+    {
+      "date": "2026-07-30",
+      "post_url": "https://x.com/builtbykern/status/2082791853133295938",
+      "type": "clip",
+      "component": "Kinetic Grid",
+      "had_link": false,
+      "had_video": true,
+      "text": "kinetic grid \u2014 vertical lines you can pluck like strings. nearest column bends, neighbors can bleed."
+    },
+    {
+      "date": "2026-07-30",
+      "post_url": "https://x.com/builtbykern/status/2082917434353218006",
+      "type": "take",
+      "component": "Arbour",
+      "had_link": false,
+      "had_video": true,
+      "text": "Working on Arbour \u2014 a residential Framer template.\n\nThis week: the home open. Paper field, quiet type, no hero scream.\n\n@framer\n#Framer #FramerTemplate"
+    },
+    {
+      "date": "2026-07-31",
+      "post_url": "https://x.com/builtbykern/status/2083137583014465790",
+      "type": "before_after",
+      "component": "Arbour",
+      "had_link": false,
+      "had_video": true,
+      "text": "Arbour WIP \u2014 territories as a stage, not a pin list.\n\nTerritoryRail cycling Chelsea \u2192 Notting Hill \u2192 Hampstead \u2192 Cotswolds.\n\n#Framer #FramerTemplate"
+    },
+    {
+      "date": "2026-08-01",
+      "post_url": "https://x.com/builtbykern/status/2083513991498776744",
+      "type": "spotlight",
+      "component": "Quote Intake",
+      "had_link": false,
+      "had_video": true,
+      "text": "quote intake \u2014 multi-step estimator that updates the range as they choose. intent \u2192 scope \u2192 timing \u2192 review. webhook optional\n\n@framer\n#Framer #FramerMarketplace"
+    },
+    {
+      "date": "2026-08-01",
+      "post_url": "https://x.com/builtbykern/status/2083514245761630385",
+      "type": "spotlight",
+      "component": "Video Ring",
+      "had_link": false,
+      "had_video": true,
+      "text": "video ring \u2014 full-frame video, floating play/pause with a radial progress ring. pauses offscreen\n\n@framer\n#Framer #FramerMarketplace"
+    },
+    {
+      "date": "2026-08-01",
+      "post_url": "https://x.com/builtbykern/status/2083536437308198940",
+      "type": "ecosystem",
+      "component": "Arbour",
+      "had_link": false,
+      "had_video": true,
+      "text": "Arbour WIP \u2014 phone pass on home. Same house, different frame.\n\n#Framer #FramerTemplate"
+    },
+    {
+      "date": "2026-08-03",
+      "post_url": "https://x.com/builtbykern/status/2084228268991844753",
+      "type": "recap",
+      "component": "Arbour",
+      "had_link": false,
+      "had_video": true,
+      "text": "Arbour WIP \u2014 portfolio as a filmstrip.\n\nHover the rail. Detail pages come later in the build.\n\n#Framer #FramerTemplate"
+    },
+    {
+      "date": "2026-08-03",
+      "post_url": "https://x.com/builtbykern/status/2084228637268623395",
+      "type": "clip",
+      "component": "Arbour",
+      "had_link": false,
+      "had_video": true,
+      "text": "Arbour WIP \u2014 portfolio page coming into focus.\n\nCMS-bound cards. Six residences for now. Filters next.\n\n#Framer #FramerTemplate"
+    },
+    {
+      "date": "2026-08-03",
+      "post_url": "https://x.com/builtbykern/status/2084228984607227913",
+      "type": "clip",
+      "component": "Hold Confirm",
+      "had_link": false,
+      "had_video": true,
+      "text": "most confirm buttons are click and hope. this one makes you hold \u2014 ink fills under the label, let go early and it snaps back\n\n@framer\n#Framer #FramerMarketplace"
+    },
+    {
+      "date": "2026-08-04",
+      "post_url": "https://x.com/builtbykern/status/2084728609361588258",
+      "type": "insight",
+      "component": "Arbour",
+      "had_link": false,
+      "had_video": true,
+      "text": "Arbour WIP \u2014 residence filters on the portfolio.\n\nAvailability, neighbourhood, price, beds \u2014 tied to the CMS list.\n\n#Framer #FramerTemplate"
+    },
+    {
+      "date": "2026-08-04",
+      "post_url": "https://x.com/builtbykern/status/2084730172540948708",
+      "type": "spotlight",
+      "component": "Morph Dropdown",
+      "had_link": false,
+      "had_video": true,
+      "text": "most dropdowns just expand a list. this one morphs \u2014 gooey pill to floating menu, sliding highlight, label crossfade on pick\n\n#Framer #FramerMarketplace"
+    },
+    {
+      "date": "2026-08-05",
+      "post_url": "https://x.com/builtbykern/status/2084954734054522894",
+      "type": "spotlight",
+      "component": "Dive Field",
+      "had_link": true,
+      "had_video": true,
+      "text": "finally shipped Dive Field \u2014 type stacked in Z. wheel and a damped camera drifts through fog and chromatic dissolve\n\nnever thought i'd get to ship something like this inside framer. grateful the canvas even lets this kind of motion exist\n\nhttps://framer.link/8yEwYKP\n\n@framer\n#Framer #FramerMarketplace"
+    },
+    {
+      "date": "2026-08-05",
+      "post_url": "https://x.com/builtbykern/status/2085066983402360930",
+      "type": "clip",
+      "component": "Access Code",
+      "had_link": true,
+      "had_video": true,
+      "text": "most OTP fields fight paste. this one wants it \u2014 segmented slots fill on paste, soft unlock, optional remember\n\n#Framer #FramerMarketplace\n@framer"
+    },
+    {
+      "date": "2026-08-07",
+      "post_url": "https://x.com/builtbykern/status/2085700636612465052",
+      "type": "spotlight",
+      "component": "Copy Field",
+      "had_link": true,
+      "had_video": true,
+      "text": "most copy UIs are a button next to plain text. this one masks the value, reveals on the eye, then copies for real \u2014 stroke \u2192 check, hover hints for View / Copy\n\n#Framer #FramerMarketplace\n@framer"
+    },
+    {
+      "date": "2026-08-09",
+      "post_url": "https://x.com/builtbykern/status/2086478234284179882",
+      "type": "spotlight",
+      "component": "Type Peek",
+      "had_link": false,
+      "had_video": true,
+      "text": "most keyword tickers just scroll words. this one peeks photos through the letters.\n\ntype peek \u2014 letter-anchored weave on a multi-row ticker.\n\n#Framer #FramerMarketplace"
+    },
+    {
+      "date": "2026-08-09",
+      "post_url": "https://x.com/builtbykern/status/2086523364529656076",
+      "type": "spotlight",
+      "component": "Archive Preview",
+      "had_link": false,
+      "had_video": true,
+      "text": "most archive rows are flat text. this one opens a film plate through a Gate slit on hover \u2014 parallax tilt, VIEW ring.\n\narchive preview \u2014 luxury film index peeks.\n\n#Framer #FramerMarketplace"
+    },
+    {
+      "date": "2026-08-10",
+      "post_url": "https://x.com/builtbykern/status/2086755868788363733",
+      "type": "spotlight",
+      "component": "LetterRollMenu",
+      "had_link": false,
+      "had_video": true,
+      "text": "most vertical menus just highlight a row. this one rolls every letter on its own \u2014 spring, wave, or flip.\n\nletter roll menu \u2014 studio nav with a focus rail.\n\n#Framer #FramerMarketplace"
+    },
+    {
+      "date": "2026-08-10",
+      "post_url": "https://x.com/builtbykern/status/2086883080267022577",
+      "type": "recap",
+      "component": "Dive Field",
+      "had_link": false,
+      "had_video": false,
+      "text": "sold a Dive Field tonight \u2014 depth stack + fog still finding buyers\n\nthanks @framer + @lemonsqueezy for the rails\n\n#Framer #FramerMarketplace"
+    },
+    {
+      "date": "2026-08-11",
+      "post_url": "https://x.com/builtbykern/status/2087141327582478792",
+      "type": "spotlight",
+      "component": "Drift Plane",
+      "had_link": true,
+      "had_video": true,
+      "text": "most image planes just sit there. this one drifts \u2014 pan, depth, idle flight across an infinite field.\n\ndrift plane \u2014 for heroes that should never feel frozen.\n\n#Framer #FramerMarketplace"
+    },
+    {
+      "date": "2026-08-12",
+      "post_url": "https://x.com/builtbykern/status/2087472168212869172",
+      "type": "clip",
+      "component": "Arbour",
+      "had_link": false,
+      "had_video": false,
+      "text": "Arbour WIP \u2014 properties list. two columns, six residences, CMS-bound. the pill opens the detail page. #Framer #FramerTemplate"
+    },
+    {
+      "date": "2026-08-12",
+      "post_url": "https://x.com/builtbykern/status/2087507169457353054",
+      "type": "spotlight",
+      "component": "Kinetic Line",
+      "had_link": false,
+      "had_video": true,
+      "text": "most section dividers just sit there. this one bends when you pluck it \u2014 tension, reach, damping on a live stroke. kinetic line \u2014 physics divider for editorial breaks. #Framer #FramerMarketplace"
+    },
+    {
+      "date": "2026-08-13",
+      "post_url": "https://x.com/builtbykern/status/2087928555543908496",
+      "type": "take",
+      "component": "Aurea",
+      "had_link": false,
+      "had_video": false,
+      "text": "Aurea WIP \u2014 pulling stills in Lummi.\n\nlight through a window, oil in a glass. a house, not a spa.\n\n#Framer #FramerTemplate"
+    }
+  ]
 }

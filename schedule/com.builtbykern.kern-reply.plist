@@ -7,26 +7,30 @@
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
-    <string>__KERN_X_ROOT__/scripts/schedule_reply_loop.sh</string>
+    <string>__LAUNCHER__</string>
   </array>
   <key>WorkingDirectory</key>
-  <string>__KERN_X_ROOT__</string>
+  <string>__SUPPORT_DIR__</string>
   <key>RunAtLoad</key>
   <true/>
   <key>KeepAlive</key>
   <true/>
   <key>StandardOutPath</key>
-  <string>__KERN_X_ROOT__/logs/x-cycle.log</string>
+  <string>__SUPPORT_DIR__/logs/x-cycle.log</string>
   <key>StandardErrorPath</key>
-  <string>__KERN_X_ROOT__/logs/x-cycle.err</string>
-  <key>ThrottleInterval</key>
-  <integer>300</integer>
+  <string>__SUPPORT_DIR__/logs/x-cycle.err</string>
   <key>EnvironmentVariables</key>
   <dict>
     <key>PATH</key>
-    <string>/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
+    <string>__HOME__/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin</string>
     <key>HOME</key>
     <string>__HOME__</string>
+    <key>KERN_X_ROOT</key>
+    <string>__KERN_X_ROOT__</string>
+    <key>X_FORCE_STORAGE</key>
+    <string>1</string>
+    <key>X_HEADLESS</key>
+    <string>1</string>
   </dict>
 </dict>
 </plist>

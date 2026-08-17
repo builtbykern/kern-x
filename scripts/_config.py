@@ -29,10 +29,14 @@ def load_config() -> dict:
 
 
 def referral_urls(cfg: dict | None = None) -> dict[str, str]:
-    """Allowed affiliate URLs for reply compose (from config)."""
+    """Allowed affiliate URLs for reply compose (from config).
+
+    Cursor referral program ended — `cursor` is always empty even if a stale
+    value remains in an old config file.
+    """
     c = cfg or load_config()
     return {
-        "cursor": str(c.get("cursor_referral_url") or "").strip(),
+        "cursor": "",  # program ended — do not emit cursor.com/referral links
         "framer": str(c.get("framer_referral_url") or "").strip(),
     }
 

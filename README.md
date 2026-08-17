@@ -35,6 +35,10 @@ kern-x/
   prompts/          # 1-line cron payloads for Cursor
   cursor/rules/     # repo agent contract
   docs/             # setup, strategy, weekly review
+  docs/framer-community/  # Community post copy + queue (human, not cron)
+  state/framer-community-queue.json
+  docs/arbour-warmup.md   # Arbour template WIP X schedule (human)
+  state/arbour-warmup-queue.json
 ```
 
 ## Migrate from Accio (BuiltByKern)

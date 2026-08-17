@@ -1,0 +1,136 @@
+{
+  "updated": "2026-08-11",
+  "profile": "https://www.framer.com/@builtbykern/",
+  "following_start": 274,
+  "following_now": 266,
+  "followers": 463,
+  "target_following": 120,
+  "batch_size_per_day": 15,
+  "rules": {
+    "unfollow_if_all": [
+      "no_marketplace_components_or_templates",
+      "not_framer_team",
+      "not_pro_expert",
+      "not_high_interaction"
+    ],
+    "inactive_or_noise_any": [
+      "no_community_posts",
+      "posts_but_no_sell_and_low_engagement",
+      "follow_for_follow_spam"
+    ],
+    "low_engagement_proxy": "recent_posts_typically_lt_5_likes_and_lt_3_comments",
+    "always_keep": [
+      "framer_team_in_bio",
+      "pro_expert_badge",
+      "has_marketplace_listings",
+      "high_interaction",
+      "manual_allowlist"
+    ]
+  },
+  "keep": [
+    {"handle": "@meli", "reason": "Engineering Lead @Framer"},
+    {"handle": "@jatodaro", "reason": "Product Education at Framer"},
+    {"handle": "@jaenam", "reason": "Engineering @framer / shaders"},
+    {"handle": "@sammy-lopez-2", "reason": "Community moderator @ Framer"},
+    {"handle": "@framer", "reason": "official Framer account"},
+    {"handle": "@ruxi", "reason": "Product Engineer @ Framer"},
+    {"handle": "@emili", "reason": "marketing designer @framer — team"},
+    {"handle": "@matthias-oel", "reason": "Matt — high interaction benchmark"},
+    {"handle": "@jurre", "reason": "likely Framer team (Jurre)"},
+    {"handle": "@ben-fryc", "reason": "Framer-adjacent / high engagement"},
+    {"handle": "@juventin-ntwari-irakoze", "reason": "has Components tab (sells)"},
+    {"handle": "@lamaan", "reason": "has Templates tab"},
+    {"handle": "@nibel", "reason": "high engagement (~15–29♥) despite no listings"},
+    {"handle": "@max-palmer", "reason": "solid engagement + framer-ranks; skip (ambiguous)"},
+    {"handle": "@mmcorpo-coach", "reason": "posts Marketplace template launches"},
+    {"handle": "@babiweb", "reason": "sells templates/vectors"},
+    {"handle": "@brandwit", "reason": "sells components"},
+    {"handle": "@olonks", "reason": "Templates/Components tabs"},
+    {"handle": "@theme-crapt", "reason": "sells templates"},
+    {"handle": "@masum", "reason": "sells components"},
+    {"handle": "@vipul-salam", "reason": "Templates tab"},
+    {"handle": "@varshaa-t", "reason": "sells templates / Hype"},
+    {"handle": "@koenrh", "reason": "Security Engineer — keep until confirmed non-Framer"}
+  ],
+  "unfollowed": [
+    {
+      "handle": "@gurjot-singh-gm0q5s",
+      "name": "Gurjot Singh",
+      "reason": "No Posts; no marketplace resources",
+      "date": "2026-08-11"
+    },
+    {
+      "handle": "@tomas-agustin-alvarez-blanco",
+      "name": "Tomás Agustín Álvarez Blanco",
+      "reason": "No Posts; no marketplace",
+      "date": "2026-08-11"
+    },
+    {
+      "handle": "@golam-azom",
+      "name": "Golam Azom",
+      "reason": "No Posts; no marketplace",
+      "date": "2026-08-11"
+    },
+    {
+      "handle": "@saki-hotta-0707",
+      "name": "Saki Hotta",
+      "reason": "personal posts only; no Templates/Components; low sell signal",
+      "date": "2026-08-11"
+    },
+    {
+      "handle": "@chiragdhuriya",
+      "name": "Chirag Dhuriya",
+      "reason": "portfolio posts only; no marketplace tabs; low engagement (0–3 comments)",
+      "date": "2026-08-11"
+    },
+    {
+      "handle": "@aio",
+      "name": "Aio Studio",
+      "reason": "No Posts; no marketplace",
+      "date": "2026-08-11"
+    },
+    {
+      "handle": "@anish-c-tw9lmc",
+      "name": "Anish C",
+      "reason": "follow-for-follow spam; no marketplace tabs",
+      "date": "2026-08-11"
+    },
+    {
+      "handle": "@kaloyan-videlov-uuno4d",
+      "name": "Kaloyan Videlov",
+      "reason": "No Posts; no marketplace",
+      "date": "2026-08-11"
+    }
+  ],
+  "queue_batch_3": [
+    "@mirc",
+    "@sinax",
+    "@hreza",
+    "@husseinshirvani",
+    "@irem-geldry",
+    "@krokzy",
+    "@magdalena-wolowiec",
+    "@muzamil-afridi",
+    "@numers-world",
+    "@rabyaan",
+    "@rajeshuiux",
+    "@reetaish-kumawat",
+    "@robbifirmansah",
+    "@saif-uddin",
+    "@saisaketk",
+    "@sanin",
+    "@shahariyaalamsiyam",
+    "@stratila",
+    "@sydney-lab",
+    "@tanzilrayhan",
+    "@thaer-swailem",
+    "@dilanomer",
+    "@danny-hansen",
+    "@ena-supply",
+    "@enormos",
+    "@framebuild",
+    "@fuegoui",
+    "@gustave-flowbert"
+  ],
+  "notes": "Expanded rule active. 8 unfollows today of ~15 cap. Remaining following full of sellers/Experts/team — next batch audit queue_batch_3 for No Posts / F4F."
+}

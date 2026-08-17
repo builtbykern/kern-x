@@ -53,7 +53,11 @@ def load_extract_js(name: str = "extract_technical_candidates.js") -> str:
 
 
 def get_work_page(context):
-    """Reuse an open X tab when attached to the user's Chrome (CDP)."""
+    """Reuse the existing browser tab — never open extras if one exists.
+
+    Policy: one X tab for the day. Prefer an open x.com page; otherwise any
+    live page; only create a page when the context has zero tabs.
+    """
     for page in context.pages:
         try:
             if page.is_closed():
@@ -75,6 +79,8 @@ def get_work_page(context):
 
 
 def launch_context(playwright, *, cdp_url: str | None = None):
+    if cdp_url is not None and not str(cdp_url).strip():
+        cdp_url = None
     if cdp_url:
         browser = playwright.chromium.connect_over_cdp(cdp_url)
         if browser.contexts:
@@ -256,6 +262,18 @@ def load_state_bundle() -> dict:
     }
 
 
+def normalize_status_url(url: str) -> str:
+    """Canonicalize an X status URL for one-reply-per-post dedup."""
+    u = (url or "").strip().split("?")[0].rstrip("/")
+    if not u:
+        return ""
+    # x.com and twitter.com are the same post
+    u = u.replace("https://twitter.com/", "https://x.com/")
+    u = u.replace("http://x.com/", "https://x.com/")
+    u = u.replace("http://twitter.com/", "https://x.com/")
+    return u.lower()
+
+
 def dedup_handles(bundle: dict) -> tuple[set[str], set[str]]:
     now = time.time()
     cd = {
@@ -270,6 +288,17 @@ def dedup_handles(bundle: dict) -> tuple[set[str], set[str]]:
     return cd, recent
 
 
+def dedup_post_urls(bundle: dict) -> set[str]:
+    """Every status we already touched — never reply twice to the same post."""
+    seen: set[str] = set()
+    for e in bundle["replies"].get("entries", []):
+        for key in ("post_url", "followup_of", "author_reply_url", "followup_url"):
+            u = normalize_status_url(str(e.get(key) or ""))
+            if u:
+                seen.add(u)
+    return seen
+
+
 def current_query(bundle: dict) -> str:
     rot = bundle["rotation"]
     pool = rot.get("pool") or []
@@ -279,15 +308,48 @@ def current_query(bundle: dict) -> str:
     return pool[idx]
 
 
+def _age_hours_from_label(label: str | None) -> float | None:
+    """Parse X relative age labels. Returns hours, or None if unknown/too old format."""
+    import re
+
+    t = (label or "").strip()
+    if not t:
+        return None
+    if re.search(r"just now", t, re.I):
+        return 0.0
+    if re.search(r"\d{4}", t) or re.search(
+        r"\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b", t, re.I
+    ):
+        return None
+    m = re.search(r"(\d+)\s*([dhms])", t, re.I)
+    if not m:
+        return None
+    n = int(m.group(1))
+    u = m.group(2).lower()
+    if u == "s":
+        return n / 3600.0
+    if u == "m":
+        return n / 60.0
+    if u == "h":
+        return float(n)
+    if u == "d":
+        return float(n) * 24.0
+    return None
+
+
 def filter_candidates(
     candidates: list[dict],
     skip: set[str],
     max_n: int = 5,
     *,
     forbid_component: str | None = None,
+    max_age_hours: float = 4.0,
+    prefer_media: bool = True,
+    skip_post_urls: set[str] | None = None,
 ) -> list[dict]:
     out: list[dict] = []
     comp = (forbid_component or "").lower()
+    seen_urls = skip_post_urls or set()
     for c in candidates:
         handle = (c.get("handle") or "").strip()
         if not handle:
@@ -300,13 +362,25 @@ def filter_candidates(
         text = (c.get("text") or "").lower()
         if comp and comp in text:
             continue
+        age = _age_hours_from_label(c.get("age_label"))
+        if age is not None and age > max_age_hours:
+            continue
+        # If extract already filtered but label missing, keep; if label present and unparsable → drop
+        if c.get("age_label") and age is None:
+            continue
         normed = {**c, "handle": key if key.startswith("@") else f"@{key}"}
         if "post_url" not in normed and "url" in normed:
-            normed["post_url"] = normed.pop("url")
+            normed["post_url"] = normed["url"]
+        status = normalize_status_url(str(normed.get("post_url") or ""))
+        if status and status in seen_urls:
+            continue
+        normed["has_media"] = bool(normed.get("has_media"))
         out.append(normed)
-        if len(out) >= max_n:
-            break
-    return out
+
+    if prefer_media:
+        out.sort(key=lambda x: (not x.get("has_media"), x.get("age_label") or ""))
+
+    return out[:max_n]
 
 
 def load_dotenv() -> None:

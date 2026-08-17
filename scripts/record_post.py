@@ -20,6 +20,7 @@ def main() -> None:
     p.add_argument("--type", required=True)
     p.add_argument("--component", default="")
     p.add_argument("--had-link", choices=["true", "false"], required=True)
+    p.add_argument("--had-video", choices=["true", "false"], default="false")
     p.add_argument("--text", required=True)
     args = p.parse_args()
 
@@ -33,6 +34,7 @@ def main() -> None:
         "type": args.type,
         "component": args.component or None,
         "had_link": args.had_link == "true",
+        "had_video": args.had_video == "true",
         "text": args.text,
     }
     log.setdefault("entries", []).append(entry)

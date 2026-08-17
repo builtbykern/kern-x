@@ -23,7 +23,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from x_cycle_core import run_cycle  # noqa: E402
 from x_playwright import get_work_page, launch_context, load_dotenv  # noqa: E402
-from x_reply_back_check import check_reply_backs  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 _running = True
@@ -77,8 +76,15 @@ def _sleep_jitter() -> int:
 
 def main() -> None:
     load_dotenv()
+    if os.environ.get("X_REPLY_ENABLED", "1").strip().lower() in ("0", "false", "no", "off"):
+        print("[daemon] X_REPLY_ENABLED=0 — idle (no reply cycles)", flush=True)
+        while True:
+            time.sleep(3600)
+        return
+    if os.environ.get("X_FORCE_STORAGE", "").strip() in ("1", "true", "yes"):
+        os.environ.pop("X_CDP_URL", None)
     env_file = ROOT / ".env"
-    if env_file.is_file():
+    if env_file.is_file() and not os.environ.get("X_FORCE_STORAGE", "").strip():
         os.environ.setdefault("X_CDP_URL", "http://127.0.0.1:9222")
     signal.signal(signal.SIGINT, _stop)
     signal.signal(signal.SIGTERM, _stop)
@@ -89,13 +95,21 @@ def main() -> None:
         print("pip install -r requirements-browser.txt && playwright install chromium", file=sys.stderr)
         sys.exit(1)
 
-    cdp = os.environ.get("X_CDP_URL", "http://127.0.0.1:9222")
-    os.environ["X_CDP_URL"] = cdp
+    cdp_raw = os.environ.get("X_CDP_URL")
+    cdp = cdp_raw.strip() if cdp_raw and str(cdp_raw).strip() else None
+    if cdp:
+        os.environ["X_CDP_URL"] = cdp
     min_sec = int(os.environ.get("X_LOOP_MIN_SEC", str(60 * 60)))
     max_sec = int(os.environ.get("X_LOOP_MAX_SEC", str(90 * 60)))
 
-    print(f"[daemon] browser stays open — CDP={cdp}", flush=True)
-    _ensure_chrome_cdp(cdp)
+    print(f"[daemon] browser stays open — CDP={cdp or 'off'}", flush=True)
+    if cdp:
+        try:
+            _ensure_chrome_cdp(cdp)
+        except Exception as e:
+            print(f"[daemon] CDP unavailable ({e}); falling back to storage state", flush=True)
+            os.environ.pop("X_CDP_URL", None)
+            cdp = None
 
     with sync_playwright() as p:
         context, browser, mode = launch_context(p, cdp_url=cdp)
@@ -105,18 +119,33 @@ def main() -> None:
         while _running:
             ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             print(f"[daemon] cycle start {ts}", flush=True)
-            code = run_cycle(page)
-            print(f"[daemon] cycle exit {code}", flush=True)
+            max_replies = int(os.environ.get("X_MAX_REPLIES_PER_CYCLE", "1"))
+            code = run_cycle(page, max_replies=max(1, max_replies))
+            print(f"[daemon] cycle exit {code} max_replies={max_replies}", flush=True)
 
             if not _running:
                 break
 
             try:
-                rb = check_reply_backs(page, recent=10)
-                if rb["checked"]:
-                    print(f"[daemon] reply-back check: {rb['reply_backs']}/{rb['checked']} replies got author response", flush=True)
+                from x_cycle_core import followups_enabled, run_reply_back_and_followups
+
+                rb = run_reply_back_and_followups(page)
+                if rb.get("checked"):
+                    print(
+                        f"[daemon] reply-back check: {rb['reply_backs']}/{rb['checked']} "
+                        f"replies got author response",
+                        flush=True,
+                    )
+                fus = rb.get("followups_posted") or []
+                if fus:
+                    print(f"[daemon] followups posted: {len(fus)}", flush=True)
+                elif not followups_enabled():
+                    print(
+                        "[daemon] followups off (one reply per post; set X_REPLY_FOLLOWUPS=1 to enable)",
+                        flush=True,
+                    )
             except Exception as e:
-                print(f"[daemon] reply-back check failed: {e}", flush=True)
+                print(f"[daemon] reply-back/followup failed: {e}", flush=True)
 
             if not _running:
                 break

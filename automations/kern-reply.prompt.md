@@ -12,25 +12,28 @@ Follow `runtime/reply-cycle.RUN.md` exactly. **Allowlist only** — no repo sear
 2. **Terminal** — from repo root after each reply:
    `python3 scripts/record_reply.py --handle @user --post-url <url> --text "<reply>"`
    On the **last** reply of this cycle add `--bump-rotation`.
+   For reply-back follow-ups: `python3 scripts/record_reply.py --handle @user --post-url <url> --text "<reply>" --followup-of <original_post_url>`
 
 ## Allowlist files
 
 - `state/daily-caps.json`, `state/cooldown-handles.json`, `state/query-rotation.json`, `state/week-current.json`
 - `voice/voice-compact.txt`
 - `logs/replies.json` (last 20 entries only)
+- `state/reply-back-stats.json` (optional read after reply-back check)
 
 ## Cycle rules (summary)
 
-- Max **3** replies per run. English. 1–2 sentences. One observable detail.
-- One X search: `query-rotation.json` → `pool[cycle_index % len(pool)]`, last 4 hours only.
-- Dedup: cooldown 48h + last 20 replies + coord if `forbid_mention_in_replies`.
+- Max **3** new replies per run + max **1** follow-up if an author replied back to a recent reply. English. 1 short sentence. One observable detail.
+- Search from `query-rotation.json` → try `pool` from `cycle_index` until candidates appear (last **4 hours** only). Prefer media-rich posts.
+- Dedup: cooldown **7 days** + last 20 replies + coord if `forbid_mention_in_replies`.
+- Referrals: max 1 Framer link per cycle when voice-compact fits (builder-choice posts). No Cursor referral links (program ended). Never on empathy; never with a question.
 - Wait 45–120s between replies in browser.
-- Zero-quality: no second search if first search weak.
+- After replies: run reply-back check; if `author_replied` and no follow-up yet, post one continue (no link).
 
 ## Output (exactly 6 lines, nothing else)
 
 ```
-posted_n: <0-3>
+posted_n: <0-4>
 urls: <comma-separated or none>
 skipped_n: <n>
 reasons: <dup|thin|cap|coord|error counts>
@@ -40,4 +43,4 @@ next_query: <query string used>
 
 ## Voice
 
-`voice/voice-compact.txt` — no emoji, no `!`, no links, no self-promo, banned words listed there.
+`voice/voice-compact.txt` — no emoji, no `!`, no self-promo, banned words listed there. Links only per referral rules.

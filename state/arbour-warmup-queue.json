@@ -1,0 +1,260 @@
+{
+  "project": "Arbour",
+  "live": "https://arbour.framer.website",
+  "media_root": "/Users/noel/Desktop/Framer/docs/projects/arbour/media",
+  "source_copy": "/Users/noel/Desktop/Framer/docs/projects/arbour/media/COPY.md",
+  "source_index": "/Users/noel/Desktop/Framer/docs/projects/arbour/media/INDEX.md",
+  "plan_doc": "docs/arbour-warmup.md",
+  "warmup_start": "2026-07-30",
+  "warmup_end": "2026-08-07",
+  "notes": "WIP template \u2014 no launch posts. English on X. Do NOT post live/preview URL (arbour.framer.website) until launch \u2014 video/stills only. Apply into week-current via scripts/apply_arbour_warmup.py after build_week.py.",
+  "slots": [
+    {
+      "id": "arbour-w31-thu-home",
+      "date": "2026-07-30",
+      "day_key": "thu",
+      "type": "take",
+      "pill": 1,
+      "component": "Arbour",
+      "link": false,
+      "link_url": null,
+      "thread_allowed": false,
+      "forbid_mention_in_replies": false,
+      "hook": "Arbour WIP \u2014 home open, paper field, quiet type",
+      "media": [
+        "clips/d-home-scroll-intro.mp4"
+      ],
+      "stills_optional": [
+        "stills/d-home-hero.png"
+      ],
+      "copy": "Working on Arbour \u2014 a residential Framer template.\n\nThis week: the home open. Paper field, quiet type, no hero scream.\n\n@framer\n#Framer #FramerTemplate",
+      "community_note": "Optional: 2\u20134 stills \u2014 home open Community block in COPY.md",
+      "status": "posted",
+      "posted_at": "2026-07-30",
+      "post_url": "https://x.com/builtbykern/status/2082917434353218006"
+    },
+    {
+      "id": "arbour-w31-fri-territory",
+      "date": "2026-07-31",
+      "day_key": "fri",
+      "type": "before_after",
+      "pill": 2,
+      "component": "Arbour",
+      "link": false,
+      "link_url": null,
+      "thread_allowed": false,
+      "forbid_mention_in_replies": false,
+      "hook": "Arbour WIP \u2014 TerritoryRail as stage not pin list",
+      "media": [
+        "clips/d-home-territory-motion.mp4"
+      ],
+      "stills_optional": [
+        "stills/d-home-territory-rail.png"
+      ],
+      "copy": "Arbour WIP \u2014 territories as a stage, not a pin list.\n\nTerritoryRail cycling Chelsea \u2192 Notting Hill \u2192 Hampstead \u2192 Cotswolds.\n\n#Framer #FramerTemplate",
+      "alt_media": [
+        "clips/m-territory-idle.mp4"
+      ],
+      "alt_copy": "Same TerritoryRail on phone.\n\nArbour WIP \u2014 mobile isn\u2019t an afterthought.\n\n#Framer #FramerTemplate",
+      "status": "posted",
+      "posted_at": "2026-07-31",
+      "post_url": "https://x.com/builtbykern/status/2083137583014465790"
+    },
+    {
+      "id": "arbour-w31-sat-mobile",
+      "date": "2026-08-01",
+      "day_key": "sat",
+      "type": "ecosystem",
+      "pill": 8,
+      "angle": "mobile-home",
+      "component": "Arbour",
+      "link": false,
+      "link_url": null,
+      "thread_allowed": false,
+      "forbid_mention_in_replies": false,
+      "hook": "Arbour WIP \u2014 phone pass on home",
+      "media": [
+        "clips/m-home-scroll.mp4"
+      ],
+      "stills_optional": [
+        "stills/m-home-hero.png"
+      ],
+      "copy": "Arbour WIP \u2014 phone pass on home. Same house, different frame.\n\n#Framer #FramerTemplate",
+      "status": "posted",
+      "posted_at": "2026-08-01",
+      "post_url": "https://x.com/builtbykern/status/2083536437308198940"
+    },
+    {
+      "id": "arbour-w31-sun-rail",
+      "date": "2026-08-02",
+      "day_key": "sun",
+      "type": "recap",
+      "pill": 3,
+      "component": "Arbour",
+      "link": false,
+      "link_url": null,
+      "thread_allowed": false,
+      "forbid_mention_in_replies": false,
+      "hook": "Arbour WIP \u2014 portfolio as filmstrip",
+      "media": [
+        "clips/d-home-rail-hover.mp4"
+      ],
+      "stills_optional": [
+        "stills/d-home-editorial-rail.png"
+      ],
+      "copy": "Arbour WIP \u2014 portfolio as a filmstrip.\n\nHover the rail. Detail pages come later in the build.#Framer #FramerTemplate",
+      "status": "posted",
+      "posted_at": "2026-08-03",
+      "post_url": "https://x.com/builtbykern/status/2084228268991844753"
+    },
+    {
+      "id": "arbour-w32-mon-props",
+      "date": "2026-08-03",
+      "day_key": "mon",
+      "type": "clip",
+      "pill": 4,
+      "component": "Arbour",
+      "link": false,
+      "link_url": null,
+      "thread_allowed": false,
+      "forbid_mention_in_replies": false,
+      "hook": "Arbour WIP \u2014 portfolio page CMS cards",
+      "media": [
+        "clips/d-props-scroll-grid.mp4"
+      ],
+      "stills_optional": [
+        "stills/d-props-grid.png",
+        "stills/m-props-grid.png"
+      ],
+      "copy": "Arbour WIP \u2014 portfolio page coming into focus.\n\nCMS-bound cards. Six residences for now. Filters next.\n\n#Framer #FramerTemplate",
+      "alt_media": [
+        "clips/m-props-scroll.mp4"
+      ],
+      "status": "posted",
+      "posted_at": "2026-08-03",
+      "post_url": "https://x.com/builtbykern/status/2084228637268623395"
+    },
+    {
+      "id": "arbour-w32-tue-filters",
+      "date": "2026-08-04",
+      "day_key": "tue",
+      "type": "insight",
+      "pill": 5,
+      "component": "Arbour",
+      "link": false,
+      "link_url": null,
+      "thread_allowed": true,
+      "forbid_mention_in_replies": false,
+      "hook": "Arbour WIP \u2014 residence filters tied to CMS",
+      "media": [
+        "clips/d-props-filter-focus.mp4"
+      ],
+      "stills_optional": [
+        "stills/d-props-filters.png"
+      ],
+      "copy": "Arbour WIP \u2014 residence filters on the portfolio.\n\nAvailability, neighbourhood, price, beds \u2014 tied to the CMS list.\n\n#Framer #FramerTemplate",
+      "status": "posted",
+      "posted_at": "2026-08-04",
+      "post_url": "https://x.com/builtbykern/status/2084728609361588258"
+    },
+    {
+      "id": "arbour-w32-wed-neighbourhoods",
+      "date": "2026-08-05",
+      "day_key": "wed",
+      "type": "spotlight",
+      "pill": 6,
+      "component": "Arbour",
+      "link": false,
+      "link_url": null,
+      "thread_allowed": false,
+      "forbid_mention_in_replies": true,
+      "hook": "Arbour WIP \u2014 neighbourhoods as dossiers",
+      "media": [
+        "clips/d-neighbourhoods-scroll.mp4"
+      ],
+      "stills_optional": [
+        "stills/d-neighbourhoods-grid.png",
+        "stills/m-neighbourhoods.png"
+      ],
+      "copy": "Arbour WIP \u2014 neighbourhoods as dossiers.\n\nCheckerboard of places, not a Google Map embed.#Framer #FramerTemplate",
+      "status": "pending",
+      "posted_at": null,
+      "post_url": null
+    },
+    {
+      "id": "arbour-w32-thu-detail",
+      "date": "2026-08-06",
+      "day_key": "thu",
+      "type": "take",
+      "pill": 7,
+      "component": "Arbour",
+      "link": false,
+      "link_url": null,
+      "thread_allowed": false,
+      "forbid_mention_in_replies": false,
+      "hook": "Arbour WIP \u2014 one residence full scroll",
+      "media": [
+        "clips/d-detail-scroll.mp4"
+      ],
+      "stills_optional": [
+        "stills/d-detail-hero.png"
+      ],
+      "copy": "Arbour WIP \u2014 one residence, full scroll.\n\nCMS SEO, gallery path, counsel without shouting.\n\n#Framer #FramerTemplate",
+      "status": "pending",
+      "posted_at": null,
+      "post_url": null
+    },
+    {
+      "id": "arbour-w32-fri-journal-process",
+      "date": "2026-08-07",
+      "day_key": "fri",
+      "type": "before_after",
+      "pill": 8,
+      "angle": "journal-process",
+      "component": "Arbour",
+      "link": false,
+      "link_url": null,
+      "thread_allowed": false,
+      "forbid_mention_in_replies": false,
+      "hook": "Arbour WIP \u2014 journal deck + viewing process",
+      "media": [
+        "stills/d-home-journal.png",
+        "stills/d-home-process.png"
+      ],
+      "stills_optional": [],
+      "copy": "Arbour WIP \u2014 journal deck on home. Notes before the /notes page is done.\n\nViewing process as a quiet index. Four beats.\n\n#Framer #FramerTemplate",
+      "status": "pending",
+      "posted_at": null,
+      "post_url": null
+    }
+  ],
+  "spares": [
+    {
+      "id": "spare-contact",
+      "media": [
+        "stills/d-contact-hero.png",
+        "stills/m-contact.png"
+      ],
+      "copy": "Arbour WIP \u2014 enquiry surface. Direct, no funnel theatre.\n\n#Framer #FramerTemplate"
+    },
+    {
+      "id": "spare-about",
+      "media": [
+        "stills/d-about-offices.png"
+      ],
+      "copy": "Arbour WIP \u2014 two offices on /about. Atlas grid sketch.\n\n#Framer #FramerTemplate"
+    },
+    {
+      "id": "spare-market",
+      "media": [
+        "stills/d-props-market.png"
+      ],
+      "copy": "Arbour WIP \u2014 market note under the portfolio. Editorial aside, not a blog dump.\n\n#Framer #FramerTemplate"
+    },
+    {
+      "id": "spare-thread-wip",
+      "note": "Optional 3-tweet WIP thread from COPY.md \u2014 not scheduled as daily originals"
+    }
+  ],
+  "live_note": "Internal only \u2014 do NOT post preview URL while WIP"
+}

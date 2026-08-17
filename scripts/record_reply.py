@@ -35,32 +35,56 @@ def main() -> None:
         action="store_true",
         help="Increment query-rotation.cycle_index once per cycle (use on last reply only)",
     )
+    p.add_argument(
+        "--followup-of",
+        default="",
+        help="Original post_url this follow-up continues; marks that log entry",
+    )
+    p.add_argument(
+        "--no-cooldown",
+        action="store_true",
+        help="Skip cooldown bump (follow-ups already covered by prior reply)",
+    )
     args = p.parse_args()
 
     handle = normalize_handle(args.handle)
     until = int(time.time()) + COOLDOWN_SECONDS
+    is_followup = bool(args.followup_of)
 
     log = {"entries": []}
     if LOG_PATH.is_file():
         log = json.loads(LOG_PATH.read_text(encoding="utf-8"))
-    log.setdefault("entries", []).append(
-        {
-            "date": date.today().isoformat(),
-            "handle": handle,
-            "post_url": args.post_url,
-            "reply_text": args.text,
-        }
-    )
+
+    entry = {
+        "date": date.today().isoformat(),
+        "handle": handle,
+        "post_url": args.post_url,
+        "reply_text": args.text,
+        "recorded_at": time.time(),
+    }
+    if is_followup:
+        entry["is_followup"] = True
+        entry["followup_of"] = args.followup_of
+
+    log.setdefault("entries", []).append(entry)
+
+    if is_followup:
+        for stored in log["entries"]:
+            if stored.get("post_url") == args.followup_of and not stored.get("is_followup"):
+                stored["followup_url"] = args.post_url
+                break
+
     log["entries"] = log["entries"][-MAX_ENTRIES:]
     LOG_PATH.write_text(json.dumps(log, indent=2) + "\n", encoding="utf-8")
 
-    cooldown = {"handles": []}
-    if COOLDOWN_PATH.is_file():
-        cooldown = json.loads(COOLDOWN_PATH.read_text(encoding="utf-8"))
-    handles = [h for h in cooldown.get("handles", []) if h.get("handle") != handle]
-    handles.append({"handle": handle, "until": until})
-    cooldown["handles"] = handles[-500:]
-    COOLDOWN_PATH.write_text(json.dumps(cooldown, indent=2) + "\n", encoding="utf-8")
+    if not args.no_cooldown:
+        cooldown = {"handles": []}
+        if COOLDOWN_PATH.is_file():
+            cooldown = json.loads(COOLDOWN_PATH.read_text(encoding="utf-8"))
+        handles = [h for h in cooldown.get("handles", []) if h.get("handle") != handle]
+        handles.append({"handle": handle, "until": until})
+        cooldown["handles"] = handles[-500:]
+        COOLDOWN_PATH.write_text(json.dumps(cooldown, indent=2) + "\n", encoding="utf-8")
 
     caps = json.loads(CAPS_PATH.read_text(encoding="utf-8"))
     today = date.today().isoformat()
@@ -81,7 +105,8 @@ def main() -> None:
         rot["cycle_index"] = int(rot.get("cycle_index", 0)) + 1
         ROTATION_PATH.write_text(json.dumps(rot, indent=2) + "\n", encoding="utf-8")
 
-    print(f"recorded reply @{handle.lstrip('@')} replies={caps['replies']}")
+    kind = "followup" if is_followup else "reply"
+    print(f"recorded {kind} @{handle.lstrip('@')} replies={caps['replies']}")
 
 
 if __name__ == "__main__":

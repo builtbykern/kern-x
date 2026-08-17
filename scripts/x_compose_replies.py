@@ -40,8 +40,8 @@ def compose_context(today: dict) -> dict:
     return {"today": slim, "refs": refs, "ref_max": 1}
 
 
-def _slim_candidates(candidates: list[dict], max_text: int = 200) -> list[dict]:
-    """Trim tweet text to save tokens — the LLM only needs enough context to write a reply."""
+def _slim_candidates(candidates: list[dict], max_text: int = 280) -> list[dict]:
+    """Trim tweet text to save tokens — keep enough for one concrete detail."""
     out = []
     for c in candidates:
         slim = {"h": c.get("handle", ""), "u": c.get("post_url") or c.get("url", "")}
@@ -51,6 +51,53 @@ def _slim_candidates(candidates: list[dict], max_text: int = 200) -> list[dict]:
             slim["tone"] = _tone_hint(text)
         out.append(slim)
     return out
+
+
+def _recent_reply_texts(limit: int = 12) -> list[str]:
+    """Last reply lines — avoid repeating the same robot cadence."""
+    path = ROOT / "logs" / "replies.json"
+    support = (
+        Path.home()
+        / "Library"
+        / "Application Support"
+        / "builtbykern-kern-x"
+        / "runtime"
+        / "logs"
+        / "replies.json"
+    )
+    for p in (support, path):
+        if not p.is_file():
+            continue
+        try:
+            data = json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        out: list[str] = []
+        for e in reversed(data.get("entries") or []):
+            if e.get("is_followup"):
+                continue
+            t = (e.get("reply_text") or "").strip()
+            if t:
+                out.append(t)
+            if len(out) >= limit:
+                break
+        return out
+    return []
+
+
+def _compose_instructions(max_replies: int) -> str:
+    return (
+        f"Write up to {max_replies} replies for @builtbykern. "
+        "Each reply_text: ONE short lowercase sentence. Cool mood only — never critical or pedantic. "
+        "Plain > clever. React like a chill friend who skimmed the post. "
+        "Never dunk, lecture, judge quality, or sound smarter than the author. "
+        "Never restate or paraphrase their tweet — react, don't summarize. "
+        "Never label-speak (product name + category). Never 'X as a Y' captions. "
+        "Never try-hard specifics (rankings, caption meta, scraped-sounding numbers). "
+        "No twin structure across replies in this batch. "
+        "Do not echo recent_replies phrasing. "
+        'JSON only: {"replies":[{"handle","post_url","reply_text"}]}'
+    )
 
 
 def compose_openai(
@@ -65,16 +112,20 @@ def compose_openai(
         "c": slim,
         "ctx": ctx,
         "v": voice,
-        "out": f'{{"replies":[{{"handle","post_url","reply_text"}}]}} max {max_replies}. English.',
+        "recent_replies": _recent_reply_texts(),
+        "out": _compose_instructions(max_replies),
     }
     resp = client.chat.completions.create(
         model=model,
-        temperature=0.4,
+        temperature=0.55,
         response_format={"type": "json_object"},
         messages=[
             {
                 "role": "system",
-                "content": "Write 1-sentence X replies for @builtbykern. Sound like a friend in a group chat, not a content creator. Follow the voice rules word for word. JSON only, no markdown.",
+                "content": (
+                    "You write plain, chill X replies — cool mood only, never critical or pedantic. "
+                    "Follow voice rules exactly. Simple friendly reactions. JSON only, no markdown."
+                ),
             },
             {
                 "role": "user",
@@ -101,22 +152,57 @@ def compose_openai(
     return out
 
 
+def resolve_node_bin() -> str:
+    """Find node even under launchd (minimal PATH)."""
+    candidates = [
+        os.environ.get("NODE_BIN", "").strip(),
+        "node",
+        str(Path.home() / ".local" / "bin" / "node"),
+        "/opt/homebrew/bin/node",
+        "/usr/local/bin/node",
+    ]
+    for c in candidates:
+        if not c:
+            continue
+        if c == "node":
+            from shutil import which
+
+            found = which("node")
+            if found:
+                return found
+            continue
+        if Path(c).is_file() and os.access(c, os.X_OK):
+            return c
+    raise FileNotFoundError("node binary not found")
+
+
 def compose_cursor(
     candidates: list[dict], voice: str, today: dict, max_replies: int, ctx: dict
 ) -> list[dict]:
     root = ROOT
     slim = _slim_candidates(candidates[:max_replies])
+    recent = _recent_reply_texts()
     prompt = (
-        f"JSON array, max {max_replies}: handle, post_url, reply_text. 1 sentence.\n"
-        f"Voice:\n{voice}\nCtx:\n{json.dumps(ctx)}\nCandidates:\n{json.dumps(slim)}"
+        f"{_compose_instructions(max_replies)}\n"
+        "Return a JSON array of objects (not wrapped), fields: handle, post_url, reply_text.\n"
+        f"Voice:\n{voice}\n"
+        f"Ctx:\n{json.dumps(ctx)}\n"
+        f"Avoid repeating these recent_replies (same cadence/phrases):\n{json.dumps(recent)}\n"
+        f"Candidates:\n{json.dumps(slim)}"
     )
     prompt_path = root / "state" / ".compose-prompt.txt"
     prompt_path.write_text(prompt, encoding="utf-8")
     script = root / "scripts" / "x_compose_cursor.mjs"
     env = {**os.environ, "KERN_X_ROOT": str(root), "CURSOR_API_KEY": os.environ["CURSOR_API_KEY"]}
+    # Ensure node deps resolve when cwd is Application Support mirror
+    node_path = env.get("PATH", "")
+    local_bin = str(Path.home() / ".local" / "bin")
+    if local_bin not in node_path.split(":"):
+        env["PATH"] = f"{local_bin}:{node_path}" if node_path else local_bin
     try:
+        node = resolve_node_bin()
         text = subprocess.check_output(
-            ["node", str(script), str(prompt_path)],
+            [node, str(script), str(prompt_path)],
             cwd=root,
             env=env,
             text=True,
@@ -128,7 +214,18 @@ def compose_cursor(
         raise SystemExit(f"cursor compose failed: {e.stderr or e}") from e
     if text.startswith("```"):
         text = text.split("\n", 1)[-1].rsplit("```", 1)[0].strip()
-    items = json.loads(text)
+    if not text:
+        raise ValueError("cursor compose returned empty stdout")
+    try:
+        items = json.loads(text)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"cursor compose invalid JSON: {text[:200]!r}") from e
+    if not isinstance(items, list):
+        # Some models wrap as {"replies":[...]}
+        if isinstance(items, dict) and isinstance(items.get("replies"), list):
+            items = items["replies"]
+        else:
+            raise ValueError(f"cursor compose expected list, got {type(items).__name__}")
     return items[:max_replies]
 
 
@@ -168,10 +265,22 @@ def main() -> None:
     ctx = compose_context(today)
 
     backend = resolve_compose_backend()
+    items: list[dict] = []
     if backend == "openai":
         items = compose_openai(candidates, voice, today, args.max, ctx)
     elif backend == "cursor":
-        items = compose_cursor(candidates, voice, today, args.max, ctx)
+        try:
+            items = compose_cursor(candidates, voice, today, args.max, ctx)
+            if not isinstance(items, list) or not items:
+                raise ValueError("cursor compose returned empty")
+        except Exception as e:
+            # Fall back to OpenAI when Cursor SDK returns empty/invalid JSON
+            openai_key = (os.environ.get("OPENAI_API_KEY") or "").strip()
+            if openai_key and not _is_cursor_key(openai_key):
+                print(f"cursor compose failed ({e}); falling back to openai", file=sys.stderr)
+                items = compose_openai(candidates, voice, today, args.max, ctx)
+            else:
+                raise
     else:
         print("Set CURSOR_API_KEY or OPENAI_API_KEY in .env", file=sys.stderr)
         sys.exit(1)

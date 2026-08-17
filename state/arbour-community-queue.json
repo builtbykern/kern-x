@@ -1,0 +1,84 @@
+{
+  "project": "Arbour",
+  "channel": "framer-community",
+  "live": "https://arbour.framer.website",
+  "media_root": "/Users/noel/Desktop/Framer/docs/projects/arbour/media",
+  "plan_doc": "docs/framer-community/arbour-warmup.md",
+  "cadence_days": "2-3",
+  "notes": "WIP template — Showcase/Design/Update with stills. No Component card until listed. Do NOT paste live/preview URL while WIP. Offset from X daily originals.",
+  "posts": [
+    {
+      "id": "arbour-community-1-home-territory",
+      "date": "2026-07-31",
+      "pills": [
+        1,
+        2
+      ],
+      "stills": [
+        "stills/d-home-hero.png",
+        "stills/d-home-territory-rail.png",
+        "stills/m-home-hero.png"
+      ],
+      "title": "Arbour WIP — home open + TerritoryRail",
+      "body": "Arbour WIP — home open + TerritoryRail\n\nSketching the first viewport: parchment, ink, a mark that doesn’t compete with the photography.\n\nNeighbourhoods as an editorial stage: image, coords, quiet index. Desktop + a phone still.\n\nNot a finished template. Just the entrance and the map of place.\n#Framer #FramerTemplate",
+      "status": "published",
+      "published_at": "2026-07-31",
+      "post_url": "https://framer.link/uYYtAPy"
+    },
+    {
+      "id": "arbour-community-2-rail-props",
+      "date": "2026-08-03",
+      "pills": [
+        3,
+        4
+      ],
+      "stills": [
+        "stills/d-home-editorial-rail.png",
+        "stills/d-props-grid.png",
+        "stills/m-props-grid.png"
+      ],
+      "title": "Arbour WIP — editorial rail → /properties",
+      "body": "Arbour WIP — editorial rail → /properties\n\nHome portfolio strip before the full portfolio page. Motion on hover only.\n\nOwned PropertyCards on a filtered CMS list. Desktop grid + phone crop.\nStill wiring polish. Structure first.\n\n#Framer #FramerTemplate",
+      "status": "pending",
+      "published_at": null,
+      "post_url": null
+    },
+    {
+      "id": "arbour-community-3-filters-neighbourhoods",
+      "date": "2026-08-05",
+      "pills": [
+        5,
+        6
+      ],
+      "stills": [
+        "stills/d-props-filters.png",
+        "stills/d-neighbourhoods-grid.png",
+        "stills/m-neighbourhoods.png"
+      ],
+      "title": "Arbour WIP — filters + /neighbourhoods",
+      "body": "Arbour WIP — filters + /neighbourhoods\n\nForm controls → page variables → collection list. Quiet UI, estate pacing.\n\nTerritory checkerboard + hero. Place before property. Still in progress.\n#Framer #FramerTemplate",
+      "status": "pending",
+      "published_at": null,
+      "post_url": null
+    },
+    {
+      "id": "arbour-community-4-detail-journal",
+      "date": "2026-08-07",
+      "pills": [
+        7,
+        8
+      ],
+      "stills": [
+        "stills/d-detail-hero.png",
+        "stills/d-home-journal.png",
+        "stills/d-home-process.png",
+        "stills/d-contact-hero.png"
+      ],
+      "title": "Arbour WIP — detail + journal on home",
+      "body": "Arbour WIP — detail + journal on home\n\nCheyne Walk as the sample residence. Detail template still getting weight and rhythm.\n\nArticle cards + viewing process as a quiet index. Full /notes route still cooking.\n\n#Framer #FramerTemplate",
+      "status": "pending",
+      "published_at": null,
+      "post_url": null
+    }
+  ]
+}

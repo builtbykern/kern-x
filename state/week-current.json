@@ -1,76 +1,166 @@
 {
-  "week": "2026-W28",
-  "built_at": "2026-07-08",
+  "week": "2026-W32",
+  "built_at": "2026-08-03",
   "challenge_mode": false,
+  "notes": "Latest live components on X: Hold Confirm (Mon) + Morph Dropdown (Wed). Community bodies stay separate \u2014 do not paste Community verbatim. Video attach; soft framer.link only in self-reply after media if needed.",
   "days": {
     "mon": {
       "type": "clip",
-      "component": "FlowingMenu",
+      "component": "Arbour",
       "link": false,
-      "hook": "FlowingMenu: one control that fixes scroll jank in framer",
+      "hook": "Arbour WIP \u2014 portfolio page CMS cards",
       "thread_allowed": false,
-      "forbid_mention_in_replies": false
+      "forbid_mention_in_replies": false,
+      "arbour_slot_id": "arbour-w32-mon-props",
+      "arbour_pill": 4,
+      "media": [
+        "/Users/noel/Desktop/Framer/docs/projects/arbour/media/clips/d-props-scroll-grid.mp4"
+      ],
+      "stills_optional": [
+        "/Users/noel/Desktop/Framer/docs/projects/arbour/media/stills/d-props-grid.png",
+        "/Users/noel/Desktop/Framer/docs/projects/arbour/media/stills/m-props-grid.png"
+      ],
+      "copy": "Arbour WIP \u2014 portfolio page coming into focus.\n\nCMS-bound cards. Six residences for now. Filters next.\n\n#Framer #FramerTemplate",
+      "alt_media": [
+        "/Users/noel/Desktop/Framer/docs/projects/arbour/media/clips/m-props-scroll.mp4"
+      ]
     },
     "tue": {
       "type": "insight",
-      "component": null,
+      "component": "Arbour",
       "link": false,
-      "hook": "shared colors as source of truth across code components",
+      "hook": "Arbour WIP \u2014 residence filters tied to CMS",
       "thread_allowed": true,
-      "forbid_mention_in_replies": false
+      "forbid_mention_in_replies": false,
+      "arbour_slot_id": "arbour-w32-tue-filters",
+      "arbour_pill": 5,
+      "media": [
+        "/Users/noel/Desktop/Framer/docs/projects/arbour/media/clips/d-props-filter-focus.mp4"
+      ],
+      "stills_optional": [
+        "/Users/noel/Desktop/Framer/docs/projects/arbour/media/stills/d-props-filters.png"
+      ],
+      "copy": "Arbour WIP \u2014 residence filters on the portfolio.\n\nAvailability, neighbourhood, price, beds \u2014 tied to the CMS list.\n\n#Framer #FramerTemplate"
     },
     "wed": {
       "type": "spotlight",
-      "component": "Kern_CustomCursor",
+      "component": "Arbour",
       "link": false,
-      "hook": "Advanced custom cursor system for Framer with no-code variant zones via `data-cursor` keys.",
+      "hook": "Arbour WIP \u2014 neighbourhoods as dossiers",
       "thread_allowed": false,
       "forbid_mention_in_replies": true,
-      "price_launch": 2.5,
-      "price_final": 5.0
+      "arbour_slot_id": "arbour-w32-wed-neighbourhoods",
+      "arbour_pill": 6,
+      "media": [
+        "/Users/noel/Desktop/Framer/docs/projects/arbour/media/clips/d-neighbourhoods-scroll.mp4"
+      ],
+      "stills_optional": [
+        "/Users/noel/Desktop/Framer/docs/projects/arbour/media/stills/d-neighbourhoods-grid.png",
+        "/Users/noel/Desktop/Framer/docs/projects/arbour/media/stills/m-neighbourhoods.png"
+      ],
+      "copy": "Arbour WIP \u2014 neighbourhoods as dossiers.\n\nCheckerboard of places, not a Google Map embed.#Framer #FramerTemplate"
     },
     "thu": {
       "type": "take",
-      "component": null,
+      "component": "Arbour",
       "link": false,
-      "hook": "marketplace reviews reward depth over preset count",
+      "hook": "Arbour WIP \u2014 one residence full scroll",
       "thread_allowed": false,
-      "forbid_mention_in_replies": false
+      "forbid_mention_in_replies": false,
+      "arbour_slot_id": "arbour-w32-thu-detail",
+      "arbour_pill": 7,
+      "media": [
+        "/Users/noel/Desktop/Framer/docs/projects/arbour/media/clips/d-detail-scroll.mp4"
+      ],
+      "stills_optional": [
+        "/Users/noel/Desktop/Framer/docs/projects/arbour/media/stills/d-detail-hero.png"
+      ],
+      "copy": "Arbour WIP \u2014 one residence, full scroll.\n\nCMS SEO, gallery path, counsel without shouting.\n\n#Framer #FramerTemplate"
     },
     "fri": {
       "type": "before_after",
-      "component": "FlowingMenu",
+      "component": "Arbour",
       "link": false,
-      "hook": "FlowingMenu: before/after: inertia grid vs static gallery",
+      "hook": "Arbour WIP \u2014 journal deck + viewing process",
       "thread_allowed": false,
-      "forbid_mention_in_replies": false
+      "forbid_mention_in_replies": false,
+      "arbour_slot_id": "arbour-w32-fri-journal-process",
+      "arbour_pill": 8,
+      "media": [
+        "/Users/noel/Desktop/Framer/docs/projects/arbour/media/stills/d-home-journal.png",
+        "/Users/noel/Desktop/Framer/docs/projects/arbour/media/stills/d-home-process.png"
+      ],
+      "stills_optional": [],
+      "copy": "Arbour WIP \u2014 journal deck on home. Notes before the /notes page is done.\n\nViewing process as a quiet index. Four beats.\n\n#Framer #FramerTemplate"
     },
     "sat": {
       "type": "ecosystem",
       "component": null,
       "link": false,
-      "hook": "sustained shipping beats one-off launches in the creator ecosystem",
+      "hook": "weekend craft \u2014 Arbour WIP week + new utility components",
       "thread_allowed": false,
-      "forbid_mention_in_replies": false
+      "forbid_mention_in_replies": false,
+      "copy": "weekend craft \u2014 Arbour WIP running, plus a couple of utility components shipped on the side.\n\nwhat are you building?\n\n@framer\n#Framer"
     },
     "sun": {
       "type": "recap",
-      "component": null,
+      "component": "Arbour",
       "link": false,
-      "hook": "week in framer components: what shipped and what broke",
+      "hook": "week recap \u2014 Arbour portfolio pass + Hold Confirm + Morph Dropdown",
       "thread_allowed": false,
-      "forbid_mention_in_replies": false
+      "forbid_mention_in_replies": false,
+      "copy": "week recap \u2014 Arbour portfolio pass still warming up, plus Hold Confirm and Morph Dropdown live on Marketplace.\n\n@framer\n#Framer #FramerMarketplace"
     }
   },
-  "today_key": "wed",
+  "today_key": "tue",
   "today": {
-    "type": "spotlight",
-    "component": "Kern_CustomCursor",
+    "type": "insight",
+    "component": "Arbour",
     "link": false,
-    "hook": "Advanced custom cursor system for Framer with no-code variant zones via `data-cursor` keys.",
-    "thread_allowed": false,
-    "forbid_mention_in_replies": true,
-    "price_launch": 2.5,
-    "price_final": 5.0
+    "hook": "Arbour WIP \u2014 residence filters tied to CMS",
+    "thread_allowed": true,
+    "forbid_mention_in_replies": false,
+    "arbour_slot_id": "arbour-w32-tue-filters",
+    "arbour_pill": 5,
+    "media": [
+      "/Users/noel/Desktop/Framer/docs/projects/arbour/media/clips/d-props-filter-focus.mp4"
+    ],
+    "stills_optional": [
+      "/Users/noel/Desktop/Framer/docs/projects/arbour/media/stills/d-props-filters.png"
+    ],
+    "copy": "Arbour WIP \u2014 residence filters on the portfolio.\n\nAvailability, neighbourhood, price, beds \u2014 tied to the CMS list.\n\n#Framer #FramerTemplate"
+  },
+  "arbour_warmup_applied_at": "2026-08-04T19:48:21Z",
+  "extras": {
+    "hold_confirm": {
+      "component": "Hold Confirm",
+      "type": "clip",
+      "preview_url": "https://framer.link/jCaqr0L",
+      "media": [
+        "/Users/noel/Desktop/Framer/docs/projects/listings/Kern_HoldConfirm_demo_3s.mp4"
+      ],
+      "copy": "most confirm buttons are click and hope. this one makes you hold \u2014 ink fills under the label, let go early and it snaps back\n\n@framer\n#Framer #FramerMarketplace",
+      "note": "Extra marketplace drop alongside Arbour warmup \u2014 same-day OK like Aug 1 Quote/Video Ring"
+    },
+    "morph_dropdown": {
+      "component": "Morph Dropdown",
+      "type": "spotlight",
+      "preview_url": "https://framer.link/mZkAB9F",
+      "media": [
+        "/Users/noel/Desktop/Framer/docs/projects/listings/Kern_MorphDropdown_demo_3s.mp4"
+      ],
+      "copy": "most dropdowns just expand a list. this one morphs \u2014 gooey pill to floating menu, sliding highlight, label crossfade on pick\n\n@framer\n#Framer #FramerMarketplace",
+      "note": "Post Wed as second original after Arbour neighbourhoods, or anytime this week"
+    },
+    "access_code": {
+      "component": "Access Code",
+      "type": "clip",
+      "preview_url": "https://framer.link/x0ekBXf",
+      "media": [
+        "/Users/noel/Desktop/Framer/docs/projects/listings/Kern_AccessCode_demo_3s.mp4"
+      ],
+      "copy": "most OTP fields fight paste. this one wants it \u2014 segmented slots fill on paste, soft unlock, optional remember\n\n@framer\n#Framer #FramerMarketplace",
+      "note": "X extra \u2014 not today (cadence). Ship another day or \u22654\u20136h from Arbour original."
+    }
   }
 }

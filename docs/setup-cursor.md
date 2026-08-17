@@ -29,10 +29,20 @@ Do not attach BuiltByKern repo. Only this workspace.
 pip install -r requirements-browser.txt && playwright install chromium
 python3 scripts/x_login.py
 export OPENAI_API_KEY=...   # or CURSOR_API_KEY
-python3 scripts/x_reply_cycle.py
+python3 scripts/x_reply_cycle.py --storage
 ```
 
-Schedule: `scripts/run_x_reply_cycle.sh` from cron/launchd (not Cursor browser MCP).
+**Daemon (Lane B, 60–90m):**
+
+```bash
+bash scripts/install_launchd.sh   # TCC-safe: mirrors runtime to ~/Library/Application Support
+```
+
+Re-sync after editing scripts/state: `bash scripts/sync_launchd_runtime.sh` then kickstart the agent.
+
+Manual headless (no launchd): `./scripts/start_daemon_storage.sh`
+
+CDP Chrome (visible window): `./scripts/start_kern_reply.sh`
 
 **Legacy:** Cursor Browser MCP or manual post + `record_post.py` / `record_reply.py`.
 
