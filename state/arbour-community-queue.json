@@ -5,7 +5,7 @@
   "media_root": "/Users/noel/Desktop/Framer/docs/projects/arbour/media",
   "plan_doc": "docs/framer-community/arbour-warmup.md",
   "cadence_days": "2-3",
-  "notes": "WIP template — Showcase/Design/Update with stills. No Component card until listed. Do NOT paste live/preview URL while WIP. Offset from X daily originals.",
+  "notes": "Listing live 2026-08-19 (framer.link/748Mrjh). Skip leftover WIP #2–#4. Launch Community post: docs/arbour-launch.md · Thu 20 ago 12–14 CEST.",
   "posts": [
     {
       "id": "arbour-community-1-home-territory",
@@ -39,9 +39,10 @@
       ],
       "title": "Arbour WIP — editorial rail → /properties",
       "body": "Arbour WIP — editorial rail → /properties\n\nHome portfolio strip before the full portfolio page. Motion on hover only.\n\nOwned PropertyCards on a filtered CMS list. Desktop grid + phone crop.\nStill wiring polish. Structure first.\n\n#Framer #FramerTemplate",
-      "status": "pending",
+      "status": "skipped",
       "published_at": null,
-      "post_url": null
+      "post_url": null,
+      "skip_reason": "Listing live — do not post WIP copy. Launch kit: docs/arbour-launch.md"
     },
     {
       "id": "arbour-community-3-filters-neighbourhoods",
@@ -57,9 +58,10 @@
       ],
       "title": "Arbour WIP — filters + /neighbourhoods",
       "body": "Arbour WIP — filters + /neighbourhoods\n\nForm controls → page variables → collection list. Quiet UI, estate pacing.\n\nTerritory checkerboard + hero. Place before property. Still in progress.\n#Framer #FramerTemplate",
-      "status": "pending",
+      "status": "skipped",
       "published_at": null,
-      "post_url": null
+      "post_url": null,
+      "skip_reason": "Listing live — do not post WIP copy. Launch kit: docs/arbour-launch.md"
     },
     {
       "id": "arbour-community-4-detail-journal",
@@ -76,9 +78,23 @@
       ],
       "title": "Arbour WIP — detail + journal on home",
       "body": "Arbour WIP — detail + journal on home\n\nCheyne Walk as the sample residence. Detail template still getting weight and rhythm.\n\nArticle cards + viewing process as a quiet index. Full /notes route still cooking.\n\n#Framer #FramerTemplate",
+      "status": "skipped",
+      "published_at": null,
+      "post_url": null,
+      "skip_reason": "Listing live — do not post WIP copy. Launch kit: docs/arbour-launch.md"
+    },
+    {
+      "id": "arbour-community-launch",
+      "date": "2026-08-20",
+      "pills": [],
+      "stills": [],
+      "video": "/Users/noel/Desktop/Framer/docs/projects/arbour/media/clips/d-home-territory-motion.mp4",
+      "title": "Arbour live — residential Framer template",
+      "body": "finally shipped Arbour — a residential Framer template. parchment, TerritoryRail, neighbourhoods as dossiers.\n\nindependent agency or residential studio — who is this actually for?\n\nhttps://framer.link/748Mrjh\n\n#Framer #FramerMarketplace",
       "status": "pending",
       "published_at": null,
-      "post_url": null
+      "post_url": null,
+      "plan_doc": "docs/arbour-launch.md"
     }
   ]
 }

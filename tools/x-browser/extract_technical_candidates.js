@@ -2,6 +2,14 @@
   const articles = Array.from(document.querySelectorAll('article'));
   const results = [];
 
+  function isConversation(text) {
+    const t = text || '';
+    return (
+      t.includes('?') ||
+      /\b(how do i|should i|vs |versus |worth it|anyone know|help with)\b/i.test(t)
+    );
+  }
+
   function within4h(timeText) {
     const t = (timeText || '').trim();
     if (/just now/i.test(t)) return true;
@@ -65,8 +73,9 @@
       const hasCraft = craft.some((k) => lowerText.includes(k));
       const isChallenge =
         lowerText.includes('#framerchallenge') || lowerText.includes('framerchallenge');
+      const conversation = isConversation(text);
 
-      if ((hasFramer && (hasMedia || hasCraft || isChallenge)) || hasCursor) {
+      if ((hasFramer && (hasMedia || hasCraft || isChallenge || conversation)) || hasCursor) {
         results.push({
           handle,
           url,
@@ -87,8 +96,12 @@
     }
   }
 
-  // Media-first within the extract batch
-  uniqueResults.sort((a, b) => Number(b.has_media) - Number(a.has_media));
+  // Conversation-first, media as tiebreaker
+  uniqueResults.sort((a, b) => {
+    const cq = Number(isConversation(b.text)) - Number(isConversation(a.text));
+    if (cq) return cq;
+    return Number(b.has_media) - Number(a.has_media);
+  });
 
   return uniqueResults;
 })()

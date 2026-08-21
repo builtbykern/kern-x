@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import time
 from pathlib import Path
 
@@ -377,8 +378,18 @@ def filter_candidates(
         normed["has_media"] = bool(normed.get("has_media"))
         out.append(normed)
 
-    if prefer_media:
-        out.sort(key=lambda x: (not x.get("has_media"), x.get("age_label") or ""))
+    def _conversation_last(c: dict) -> tuple:
+        text = c.get("text") or ""
+        is_q = "?" in text or bool(
+            re.search(
+                r"\b(how do i|should i|vs |versus |worth it|anyone know|help with)\b",
+                text,
+                re.I,
+            )
+        )
+        return (not is_q, not c.get("has_media") if prefer_media else False, c.get("age_label") or "")
+
+    out.sort(key=_conversation_last)
 
     return out[:max_n]
 

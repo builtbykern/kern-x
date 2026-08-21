@@ -23,12 +23,12 @@ Follow `runtime/reply-cycle.RUN.md` exactly. **Allowlist only** — no repo sear
 
 ## Cycle rules (summary)
 
-- Max **3** new replies per run + max **1** follow-up if an author replied back to a recent reply. English. 1 short sentence. One observable detail.
-- Search from `query-rotation.json` → try `pool` from `cycle_index` until candidates appear (last **4 hours** only). Prefer media-rich posts.
-- Dedup: cooldown **7 days** + last 20 replies + coord if `forbid_mention_in_replies`.
+- Max **1** new reply per run (quality > volume). English. 1 short sentence. One observable detail. Follow-ups only if `X_REPLY_FOLLOWUPS=1` and an author replied back.
+- Search from `query-rotation.json` → try `pool` from `cycle_index` until candidates appear (last **4 hours** only). Prefer conversation (questions, builder-choice, shipping); media is a tiebreaker.
+- Dedup: cooldown **7 days** + last 20 replies + **max 1 reply per post_url** + coord if `forbid_mention_in_replies`.
 - Referrals: max 1 Framer link per cycle when voice-compact fits (builder-choice posts). No Cursor referral links (program ended). Never on empathy; never with a question.
 - Wait 45–120s between replies in browser.
-- After replies: run reply-back check; if `author_replied` and no follow-up yet, post one continue (no link).
+- After replies: run reply-back check. Do not follow up unless `X_REPLY_FOLLOWUPS=1`.
 
 ## Output (exactly 6 lines, nothing else)
 

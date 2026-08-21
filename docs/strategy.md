@@ -1,6 +1,8 @@
 # Strategy — @builtbykern X (human / Sunday)
 
 > Cron agents do **not** load this file. Runtime: `runtime/*.RUN.md` + `state/*.json`.
+>
+> Multi-channel positioning (X originals, Community, Contra, Instagram): `.cursor/skills/builtbykern/SKILL.md` (human chats). This file stays X-only.
 
 ## Account
 
@@ -12,8 +14,8 @@
 
 | Lane | Runtime | Frequency | Links |
 |------|---------|-----------|-------|
-| A — Originals | `post.RUN.md` | 1/day | Prefer video attach; listing URL only as soft CTA after media |
-| B — Replies | `reply-cycle.RUN.md` | 14–20 cycles/day (60–90 min jitter), max 3 replies/cycle + max 1 reply-back follow-up | Never (except allowed referral max 1/cycle) |
+| A — Originals | `post.RUN.md` | 1/day | Copy-linkable craft; demo video when it is the product (≥10s); listing URL only as self-reply CTA |
+| B — Replies | `reply-cycle.RUN.md` | 14–20 cycles/day (60–90 min jitter), max 1 reply/cycle | Never (except allowed referral max 1/cycle) |
 
 ## Weekly calendar
 
@@ -45,27 +47,29 @@ Demo MP4s (when present): Framer listings path `docs/projects/listings/*_demo*.m
 - `voice/voice-compact.txt` (runtime)
 - Full examples: port from BuiltByKern `Automation/accio-work/voice-anchors.md` if needed
 
-## Phoenix-aware engagement (May 2026)
+## For You scoring (Aug 2026 defaults)
 
-Based on xAI's open-source X algorithm. See [`docs/x-algorithm-engagement.md`](x-algorithm-engagement.md).
+Based on [xai-org/x-algorithm](https://github.com/xai-org/x-algorithm) `param.rs`. Full table + caveats: [`docs/x-algorithm-engagement.md`](x-algorithm-engagement.md).
 
-**Core insight:** two-way threads beat likes. Exact weight multipliers are **not** in the OSS (feature switches). Optimize for author reply-back + one follow-up when they respond.
+**Core insight:** copy-link (20) and mutual replies (20) dwarf likes (0.5). Profile click and binary dwell are **0**. VQV is 0.05. Weights multiply *P(action)* for that viewer, not raw counts. Only Home-served engagement counts.
 
 **Reply strategy:**
-- Write so the author might reply back — short reaction + optional tiny question
-- When `author_replied` is detected, post **one** short follow-up (no link, no bait) — max 1/cycle
+- Write so the author might reply back — short reaction + optional tiny question. Mutuals are 4× a stranger reply.
+- Follow-ups off by default (`X_REPLY_FOLLOWUPS`). If on: **one** short continue when `author_replied` (no link, no bait) — max 1/cycle
 - Empathy on struggle posts (validate, no advice, no questions)
 - Referral max 1 link/cycle (**Framer only** — builder-choice posts; see voice-compact). Cursor referral program ended — no cursor.com/referral links. Never combine referral + question
 - Implicit tease of own work (1st person, no link) max 1/cycle
-- Prefer media-rich candidates; last 4h only
-- 7-day cooldown per handle (Phoenix author diversity)
+- Conversation-first candidates (questions, builder-choice, shipping); media is a tiebreaker. Last 4h only
+- 7-day cooldown per handle (author diversity)
 
 **Originals strategy:**
-- **Cadence: 1 original/day** (`cap_posts: 1`). Do **not** burst 2–3 originals in minutes — Phoenix dilutes same-author reach and buries the weaker posts.
+- **Cadence: 1 original/day** (`cap_posts: 1`). Do **not** burst 2–3 originals in minutes — same-author reach decays and buries the weaker posts.
 - Catch-up (missed Arbour slot): post **alone**, or ≥**4–6h** away from today’s original — never Arbour+Arbour+component in one blast.
 - Same-day Arbour WIP **+** one Marketplace drop is OK **rarely** (see Aug 1) — space them; never stack two Arbour beats the same morning.
 - During Arbour warmup: daily slot = Arbour from queue. Marketplace extras (Hold Confirm, Morph Dropdown, …) = other day **or** late offset, not on top of the Arbour post in the same burst.
-- `clip` / `before_after` / `spotlight`: attach demo video when asset exists — never link-only Marketplace OG as the only media
+- **Copy-link first:** `insight` / `take` / `ecosystem` as pasteable lists or named recipes. People save those.
+- `clip` / `before_after` / `spotlight`: attach demo video when the asset exists (≥10s if possible) because it *is* the product — not for VQV. Never link-only Marketplace OG as the only media.
+- After posting, **stay 30–60 min** and reply on your own thread (human; not cron).
 - Discovery tags (light): end originals with **1–2** hashtags when Framer-relevant — prefer `#Framer` plus one of `#FramerTemplate` / `#FramerMarketplace` / `#FramerChallenge` (only if true). Optional soft `@framer` once when natural — never tag spam, never bait.
 - Thu/Sat/Sun posts end with an open question to invite builder replies
 - Mon/Wed/Fri focus on craft observation, no forced question
@@ -73,8 +77,10 @@ Based on xAI's open-source X algorithm. See [`docs/x-algorithm-engagement.md`](x
 - If a burst already shipped: leave posts up; resume **1/day** next — don’t delete to “fix”
 
 **Metrics:**
-- Author reply-back rate (target ≥ 25%, tracked by `scripts/x_reply_back_check.py` → `state/reply-back-stats.json`)
+- Author reply-back rate (target ≥ 25%, tracked by `scripts/x_reply_back_check.py` → `state/reply-back-stats.json`) — this is the 20-weight mutual-reply loop
+- Copy-link proxies: quotes, “saved this”, people repeating the list
 - Referrals/day (tracked in `state/daily-caps.json`, cap: 2)
+- Do **not** use likes or video-view counts as For You health
 
 ## Launch sync
 

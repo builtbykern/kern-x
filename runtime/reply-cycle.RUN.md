@@ -4,11 +4,11 @@ ALLOWLIST: `state/daily-caps.json`, `state/cooldown-handles.json`, `state/query-
 
 ## Steps
 
-1. Read `state/daily-caps.json`. If `replies >= cap_replies` → output `posted_n: 0` / `skipped_n: cap` and stop.
+1. Read `state/daily-caps.json`. If `date` is not **today** (`YYYY-MM-DD`), set `date` to today, `posts` to 0, `replies` to 0, `referrals_today` to 0, and write the file. Then if `replies >= cap_replies` → output `posted_n: 0` / `skipped_n: cap` and stop.
 2. Read `state/week-current.json` → `today.forbid_mention_in_replies`, `today.component`.
 3. Read `voice/voice-compact.txt`.
-4. Read `state/query-rotation.json`. Search from `pool[cycle_index]`; if thin, try next queries in pool (last **4h** only). Stop at first batch with candidates. Prefer **media** posts.
-5. Shortlist max **5** candidates (media-first, then craft detail).
+4. Read `state/query-rotation.json`. Search from `pool[cycle_index]`; if thin, try next queries in pool (last **4h** only). Stop at first batch with candidates. Prefer **conversation** (questions, builder-choice, shipping) over media-only posts.
+5. Shortlist max **5** candidates (conversation-first, media as tiebreaker, then craft detail).
 6. Dedup each candidate:
    - handle in `state/cooldown-handles.json` (within `until`) → skip `dup`
    - handle in last 20 `logs/replies.json` entries → skip `dup`

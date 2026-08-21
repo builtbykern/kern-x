@@ -2,85 +2,102 @@
 
 Reference for reply + original strategy. Not used during cron allowlist runs unless added to RUN.
 
-**Last review:** 2026-08-10 (Phoenix / xai-org/x-algorithm, May 2026 release + creator analyses).
+**Last review:** 2026-08-17 (For You defaults in `home-mixer/params/param.rs`, last sync 2026-08-12). Official drop: [X Open Source, Aug 13](https://x.com/XOpenSource/status/2087951962004230428).
 
 ## Source of truth
 
-Musk / xAI open-sourced the For You stack:
-
 - Repo: [github.com/xai-org/x-algorithm](https://github.com/xai-org/x-algorithm)
-- Brain: **Phoenix** (Grok-based transformer) predicts per-post engagement probabilities
-- Serving: Home Mixer weighted scorer + author diversity + OON + safety/Grox layers
-- Cadence: xAI committed to ~4-week public updates (largest drop historically cited: May 15, 2026)
+- Brain: **Phoenix** predicts per-viewer action probabilities on each candidate
+- Arithmetic: `RankingScorer` in `home-mixer/scorers/ranking_scorer.rs`
+- Defaults: `home-mixer/params/param.rs` (feature switches can override in prod)
 
-## Scoring spine (verified in code)
+`Final Score ≈ Σ (weight_i × P(action_i))` then author-diversity decay / OON offsets.
 
-`Final Score ≈ Σ (weight_i × P(action_i))` then diversity / offsets.
+## How to read the weights
 
-Phoenix predicts **~19 action heads**. WeightedScorer combines them (`home-mixer/scorers/weighted_scorer.rs`), including:
+Weights multiply **predicted probability** (or a continuous value like dwell seconds). They do **not** multiply raw counts.
 
-| Head (examples) | Gesture |
-|-----------------|---------|
-| `favorite` | like |
-| `reply` | compose a reply |
-| `quote` / `quoted_click` | quote tweet / click into quote |
-| `retweet` | repost |
-| `photo_expand` | expand image |
-| `click` | click (in-post / card) |
-| `profile_click` | open author profile |
-| `vqv` (video quality view) | video play past a **min duration** gate |
-| `share` / DM / copy-link | share variants |
-| `dwell` + continuous dwell time | pause / time on post in feed |
-| `follow_author` | follow from the post |
-| `not_interested` / `block` / `mute` / `report` | **negative** weights |
+Wrong: “1 report cancels 468 likes.”  
+Right: P(report) is ~1000× rarer than P(like), so the −234 exists so that prediction can move the score at all. Mass-report raids are also limited because ranking is personalized to the viewer.
 
-### Weight caveat (critical)
+Only actions on a post **served in Home** count. Dropping a link in a group chat and having people open it does nothing.
 
-**Numeric weights are not in the open-source tree** (params like `FAVORITE_WEIGHT` are loaded at runtime / redacted).  
+## Defaults (Aug 2026)
 
-Ignore viral tables (“reply = 150× like”, etc.) as **unverified** against current production. Direction still holds: **dialogue + attention beat empty likes**; negatives can wipe positives.
+Boosts that matter for @builtbykern:
 
-### Video gate
+| Action | Weight | Notes |
+|--------|--------|--------|
+| Copy link | **20.0** | Highest positive. Paste into Slack / Discord / notes. |
+| Reply (mutuals) | **20.0** | `ReplyWeight` 5 + `BidirectionalFollowReplyWeightBoost` 15 |
+| Reply / quote / share via DM | **5.0** | 10× a like |
+| Follow from the post | **4.0** | Niche signal |
+| Share (sheet) | **2.0** | |
+| Repost | **1.0** | |
+| Like | **0.5** | Noise. Do not optimize for this. |
+| Click | **0.4** | In-post click |
+| Open link | **0.2** | |
+| Photo expand / video open / VQV | **0.05** | VQV only if video ≥ `MinVideoDurationMs` (**10s** default) |
+| Continuous dwell | **0.004** | |
+| Binary dwell | **0.0** | Unused |
+| Profile click | **0.0** | Bio / profile taps do not move For You |
 
-`vqv_weight_eligibility`: if video is missing or shorter than `MIN_VIDEO_DURATION_MS` (secret), **VQV contributes 0**. Short autoplay loops may not earn video credit — demos in the ~8–21s range are safer than 1–2s flashes.
+Penalties (same “P(action)” caveat):
 
-### Author diversity
+| Action | Weight |
+|--------|--------|
+| Report | −234 |
+| Mute | −58.8 |
+| Not interested | −43.2 |
+| Block | −31.2 |
+| Not dwelled | −0.02 |
 
-Repeated authors in one feed candidate set are **attenuated** (first post full score; later posts decay toward a floor). Practical rule for @builtbykern: **1 original/day**; never blast 2–3 originals in minutes.
+## What we were over-indexing
 
-### OON
+| Old playbook | Code |
+|--------------|------|
+| Demo MP4 for VQV / dwell | VQV 0.05, binary dwell 0. Profile click 0. Video is craft proof + copy-link bait, not a ranking hack. |
+| “Click my profile” / self-reply as algo | Self-reply marketplace link is **conversion**, not For You. |
+| Media-first reply candidates | Media is a weak ranking head. Conversation (reply / quote / copy-link) is the product. |
+| Likes as a health metric | 0.5. Ignore. |
 
-Out-of-network posts need stronger predicted engagement than in-network to surface.
+## Author diversity + OON
+
+Repeated authors in one candidate set are attenuated. **1 original/day.** Never blast 2–3 originals in minutes.
+
+Out-of-network posts need stronger predicted engagement than in-network to surface — which is why copy-link and mutual replies matter more than another like from a follower.
 
 ## What this means for @builtbykern
 
 | Signal | Lane A — originals | Lane B — replies |
 |--------|--------------------|------------------|
-| Reply / thread | Write so people answer; **be present 30–60 min** after posting and reply on your own thread | One human reply that invites author reply-back; **max 1 reply per post** (no double-tap / follow-up spam by default) |
-| Dwell | Demo MP4 + craft copy; avoid link-only OG cards as sole media | Prefer media-rich candidates (last 4h) |
-| VQV | Attach listing demos that clear a real watch threshold | Engage posts that already have video when possible |
-| Profile click | Soft buy/preview link in **self-reply**, not the first tweet | Rare Framer referral only when voice rules fit |
-| Follow | Clear niche signal (motion / Framer craft) | Don’t pitch; curiosity from the reaction |
-| Negatives | No bait (“thoughts?”), no Paid disclosure by accident, no hashtag walls | No generic bot praise — concrete detail only (`voice/voice-compact.txt`) |
+| Copy link (20) | Pasteable posts: named controls, short recipes, numbered notes, stills people save. Demo video when it *is* the product. | Reply on posts people will save — not a ranking play for us; relationship play. |
+| Mutual reply (20) | Be present 30–60 min after posting. Reply on **your** thread. Follow people who talk Framer craft so they become mutuals. | One human reply that can get a reply-back. Mutuals > strangers. Max 1 reply per post. |
+| Reply / quote / DM (5) | Thu/Sat/Sun: one natural question. No “thoughts?”. | Short reaction + optional tiny question. Follow-ups off unless `X_REPLY_FOLLOWUPS=1`. |
+| Follow (4) | Clear niche (motion / Framer craft). | Don’t pitch. |
+| Like (0.5) | Ignore. | Ignore. |
+| Profile click (0) | Soft `framer.link` in a **self-reply** for buyers, not ranking. | Rare Framer referral only when voice rules fit. |
+| Video / dwell | Attach ≥10s demo when the asset exists. Skip 1–2s flashes. Do not chase VQV. | Conversation-first; media is a tiebreaker. Last 4h only. |
+| Negatives | No bait, no hashtag walls, no accidental Paid. | No generic praise. One concrete detail (`voice/voice-compact.txt`). |
 
 ## Practical playbook (Aug 2026)
 
-1. **Conversations > likes** — short reaction + optional natural question; never engagement bait.
-2. **Own-post presence** — after a spotlight/clip, stay and reply to commenters (author continuity on *your* thread). Distinct from daemon follow-ups on *others’* posts (`X_REPLY_FOLLOWUPS` off by default).
-3. **One observable detail** — proves you read the post; Framer/craft niche.
-4. **Media first** — video/photo for originals; media-first candidate filter in reply cycles.
+1. **Copy-link > conversation > follows > everything else.** Likes, dwell, VQV, profile clicks are not the job.
+2. **Own-post presence** — after a spotlight/clip, stay and reply to commenters (especially mutuals). Distinct from daemon follow-ups on *others’* posts (`X_REPLY_FOLLOWUPS` off by default).
+3. **One observable detail** in every foreign reply — proves you read it.
+4. **Conversation-first candidates** — questions, builder-choice, shipping posts. Media is a tiebreaker, not a gate. Last 4h.
 5. **Empathy** on struggle posts — validate, no advice, no questions.
 6. **Referrals** — max 1 link/cycle, **Framer only**; never on empathy; never with a question. No Cursor referral URLs.
 7. **Cadence** — `cap_posts: 1`. Same-day second original only if spaced (≥4–6h) and intentional.
-8. **Self-reply soft CTA** — marketplace / `framer.link` after the video post ships.
+8. **Self-reply CTA** — marketplace / `framer.link` after the post ships. Conversion, not algo.
 9. **Don’t look automated** — one reply per foreign post; human voice; 7-day handle cooldown.
+10. **No engagement pods.** Home-only scoring. Don’t coordinate clicks/likes off-platform.
 
 ## Query pool
 
-High-yield Framer / Marketplace / creator queries first; `framer vs webflow`, `framer wordpress` for referral-fit. No hosting queries (Framer auto-hosts). Pool: `state/query-rotation.json`.
+High-yield Framer / Marketplace / creator queries, plus builder-choice (`framer vs webflow`, `should I use framer`, `framer wordpress`). No hosting queries (Framer auto-hosts). Pool: `state/query-rotation.json`.
 
 ## Sources
 
-- [xai-org/x-algorithm](https://github.com/xai-org/x-algorithm) README + `weighted_scorer.rs`
-- [xDoctor — May 2026 update](https://xdoctor.app/learn/updates/2026-05) (weights still redacted)
-- [VoiceMoat — 19 engagement heads](https://voicemoat.com/blog/x-algorithm/phoenix-19-engagement-heads-creator-guide) (structure verified; numeric legacy tables = historical)
+- [xai-org/x-algorithm](https://github.com/xai-org/x-algorithm) README + `home-mixer/params/param.rs` + `ranking_scorer.rs`
+- [X Open Source, Aug 13 2026](https://x.com/XOpenSource/status/2087951962004230428)

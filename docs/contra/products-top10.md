@@ -1,8 +1,29 @@
 # Contra Products — Top 10 (BuiltByKern)
 
 Profile: [contra.com/kern_mjgpb61c](https://contra.com/kern_mjgpb61c)  
-Canon live: [Drift Plane](https://contra.com/products/PQrR6lc6-drift-plane-framer-component)  
+Canon live: [Arbour](https://contra.com/products/eLYR4a2z) (template, $59) · [Drift Plane](https://contra.com/products/PQrR6lc6-drift-plane-framer-component) (component, $10)  
 Framer Buy stays on LemonSqueezy — Contra is parallel storefront.
+
+## 0. Arbour — LIVE (template)
+
+Not a component. After purchase = **remix**, not `framer.com/m/…`.
+
+| Field | Value |
+|-------|-------|
+| Status | Live (verified 2026-08-19) |
+| Contra | https://contra.com/products/eLYR4a2z |
+| Price | **$59** |
+| Preview | https://framer.link/748Mrjh |
+| Thumb | still first — `Arbour_thumbnail.png` then MP4 |
+| Feed | **not yet** — wait until after Community launch (see `state/positioning.json`) |
+| Kit | `docs/arbour-launch.md` |
+
+**Name (live):** `Arbour - Editorial estate template for independent agencies`  
+**Tags (live):** Framer · Lummi · UI Designer · UX Designer
+
+Do not restyle price. Do not feed-post in the same hour as X or Community.
+
+---
 
 ## Delivery rule (important)
 

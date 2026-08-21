@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-08-05",
-  "scored_n": 37,
-  "reply_backs": 7,
-  "rate": 0.189,
+  "updated_at": "2026-08-19",
+  "scored_n": 43,
+  "reply_backs": 9,
+  "rate": 0.209,
   "target_rate": 0.25,
   "last_check": {
     "checked": 0,
     "reply_backs": 0,
     "handles": []
   },
-  "pending_followups": 3
+  "pending_followups": 2
 }

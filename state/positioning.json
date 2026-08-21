@@ -1,0 +1,117 @@
+{
+  "updated": "2026-08-19",
+  "iso_week": "2026-W34",
+  "workflow": "agent prepares paste kits; Noel OKs then pastes. Agent never posts, never opens X/Community/Contra/IG to publish.",
+  "remind": "Ping Noel in this chat when a pending beat's window opens. Do not publish.",
+  "thesis": "studio: templates + code components + Lummi stills. authority first, sales follow.",
+  "launch": {
+    "product": "Arbour",
+    "price": 59,
+    "framer_link": "https://framer.link/748Mrjh",
+    "contra": "https://contra.com/products/eLYR4a2z",
+    "kit": "docs/arbour-launch.md",
+    "x_launch_date": "2026-08-19",
+    "x_launch_recorded_in_logs": false,
+    "note": "logs/posts.json last entry 2026-08-13. Confirm X launch tweet exists before Community. Do not post a second Arbour-live original."
+  },
+  "x": {
+    "next": {
+      "date": "2026-08-20",
+      "type": "take",
+      "component": "Arbour",
+      "status": "pending",
+      "had_link": false,
+      "had_video": false,
+      "copy": "estate sites don't fail on the grid. they fail when place is a pin, not a dossier.\n\nterritory as a stage. neighbourhoods you can read.\n\npin list or dossier — which do you ship?\n\n#Framer",
+      "media": [],
+      "do_not": "Do not say Arbour is live again. No URL. No second launch. Craft only."
+    },
+    "week_current": "state/week-current.json is 2026-W32 — stale. Do not build_week.py mid-launch; it would overwrite this board. Sunday after this launch week: rebuild, no Arbour WIP overlay."
+  },
+  "community": {
+    "next": {
+      "id": "arbour-community-launch",
+      "date": "2026-08-20",
+      "window": "12:00–14:00 CEST",
+      "reply_sweep": "16:00–18:00 CEST",
+      "type": "Template",
+      "status": "pending",
+      "queue": "state/arbour-community-queue.json",
+      "copy_doc": "docs/framer-community/posts/arbour-launch.md",
+      "video": "/Users/noel/Desktop/Framer/docs/projects/arbour/media/clips/d-home-territory-motion.mp4",
+      "stills_optional": [
+        "/Users/noel/Desktop/Framer/docs/projects/listings/Arbour_thumbnail_territory.png",
+        "/Users/noel/Desktop/Framer/docs/projects/arbour/media/stills/m-home-hero.png"
+      ],
+      "body": "finally shipped Arbour — a residential Framer template. parchment, TerritoryRail, neighbourhoods as dossiers.\n\nindependent agency or residential studio — who is this actually for?\n\nhttps://framer.link/748Mrjh\n\n#Framer #FramerMarketplace"
+    },
+    "after_that": {
+      "id": "letter-roll-menu",
+      "offset_days": "2-3 after Arbour Community",
+      "type": "Component",
+      "copy_doc": "docs/framer-community/posts/letter-roll-menu.md",
+      "video": "/Users/noel/Desktop/Framer/docs/projects/listings/Kern_LetterRollMenu_demo_3s.mp4",
+      "note": "Ship story, not feature dump. Do not use first draft row (Kinetic Line)."
+    }
+  },
+  "contra": {
+    "listing_live": true,
+    "listing_verified": "2026-08-19",
+    "next": {
+      "date": "2026-08-20",
+      "window": "after Community is live (Thu night or Fri)",
+      "status": "pending",
+      "surface": "feed",
+      "product": "https://contra.com/products/eLYR4a2z",
+      "body": "Arbour is live — editorial Framer template for independent estate agencies.\n\nPaper and Ink. TerritoryRail as a stage. Neighbourhoods as dossiers, not a pin list.\n\nhttps://contra.com/products/eLYR4a2z",
+      "preflight": "still-first gallery (Arbour_thumbnail.png then MP4). Do not feed-post in the same hour as X or Community."
+    },
+    "verify_component_urls": [
+      "LetterRollMenu",
+      "Corner Scroller",
+      "Copy Field",
+      "Filling Point",
+      "CircleCards",
+      "Wave Dot Link"
+    ],
+    "catalog": "docs/contra/products-top10.md",
+    "templates": ["Arbour — live, docs/contra/products-top10.md §0 + docs/arbour-launch.md"]
+  },
+  "instagram": {
+    "status": "explore",
+    "publish": "human only — skill does not post",
+    "link_in_bio_now": "Framer Community profile until Noel rotates to framer.link for launch week",
+    "first_batch": [
+      {
+        "n": 1,
+        "format": "Reel",
+        "when": "≥4h after X launch, not the same hour as Community",
+        "source": "/Users/noel/Desktop/Framer/docs/projects/arbour/media/clips/d-home-territory-motion.mp4",
+        "caption": "TerritoryRail in paper and ink.\n\none studio — templates, components, stills.\n\n#Framer"
+      },
+      {
+        "n": 2,
+        "format": "Carousel",
+        "when": "another day, offset from X",
+        "source": "docs/lummi/collections.md — London houses",
+        "slides": [
+          "https://www.lummi.ai/photo/elegant-townhouses-row-x5qwe",
+          "https://www.lummi.ai/photo/pastel-townhouses-at-dusk-hdi1_",
+          "https://www.lummi.ai/photo/charming-cobblestone-street-lhesm",
+          "https://www.lummi.ai/photo/keys-and-townhouses-vc6nk",
+          "https://www.lummi.ai/photo/ornate-building-facade-colie",
+          "https://www.lummi.ai/photo/minimalist-hallway-scene-j-_f8",
+          "https://www.lummi.ai/photo/modern-staircase-interior-yt8z6"
+        ],
+        "caption": "Quiet London facades, mews, and townhouse light. No stock HDR.\n\nstills for a Framer template in progress. not mixed stock."
+      },
+      {
+        "n": 3,
+        "format": "Reel",
+        "when": "after Arbour Community is live",
+        "source": "/Users/noel/Desktop/Framer/docs/projects/listings/Kern_DriftPlane_demo_3s.mp4",
+        "caption": "the plane drifts. pan is the product.\n\none studio — templates, components, stills.\n\n#Framer"
+      }
+    ]
+  }
+}

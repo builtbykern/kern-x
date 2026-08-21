@@ -18,6 +18,8 @@ When running `prompts/cron-post.txt` or `prompts/cron-reply.txt`:
 3. After browser post/reply, run `scripts/record_post.py` or `scripts/record_reply.py` from repo root.
 4. Reply cycle: `--bump-rotation` only on the last reply of a cycle.
 5. Stop on login/captcha/verification — report error, no retry.
-6. Do not load `docs/strategy.md` during cron.
+6. Do not load `docs/strategy.md` or `.cursor/skills/` during cron.
+7. If `week-current.json` `week` ≠ today's ISO week → `status: stale_week` (post) / do not invent copy.
+8. If `daily-caps.json` `date` ≠ today → roll date and zero `posts` / `replies` / `referrals_today` before applying caps.
 
-Sunday human task: `python3 scripts/build_week.py`.
+Sunday human task: `python3 scripts/build_week.py`. Human board: `python3 scripts/positioning_status.py`.

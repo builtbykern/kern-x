@@ -33,7 +33,7 @@ Or background: `scripts/schedule_reply_loop.sh` (75–105m jitter).
 ## KERN-Post (daily)
 
 - Cron `0 9 * * *` — prompt `prompts/cron-post.txt` — context `runtime/post.RUN.md`
-- Prefill: build from `kern-reply.workflow.json` pattern when needed.
+- If `state/week-current.json` `week` is not today's ISO week, the run must stop with `status: stale_week` (do not ship leftover warmup).
 
 ## Privacy
 

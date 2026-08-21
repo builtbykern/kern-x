@@ -8,6 +8,8 @@ Standalone repo for @builtbykern X automation. Do not treat BuiltByKern componen
 2. `voice/voice-compact.txt` — voice contract
 3. `state/*.json` — mutable runtime state
 4. `docs/strategy.md` — humans/Sunday only; **not** for cron
+5. `.cursor/skills/` — humans only (positioning). Hub `builtbykern` may auto-invoke in human chats. Channel skills (`x-originals`, `framer-community`, `contra`, `instagram-explore`) are explicit. **Never** load skills during KERN-Post / KERN-Reply.
+6. `state/positioning.json` — this week's next beat per channel. Humans/skills only; **not** for cron.
 
 ## Cron agents (Cursor)
 
@@ -31,9 +33,12 @@ Standalone repo for @builtbykern X automation. Do not treat BuiltByKern componen
 
 ```bash
 python3 scripts/build_week.py
+python3 scripts/positioning_status.py
 ```
 
 Optional: `docs/weekly-review.md`
+
+Positioning: agent drafts paste kits from `.cursor/skills/` + `state/positioning.json`. Noel OKs and pastes. Agent never publishes. KERN-Post must `status: stale_week` when `week-current.json` is not today's ISO week. Replies cron only if Noel asks.
 
 ## Framer Community (human)
 

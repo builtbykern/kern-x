@@ -37,7 +37,7 @@ engagement: notice framer template launches, code components, marketplace listin
 
 originals (X + Community): end Framer-relevant posts with 1–2 discovery tags — `#Framer` + `#FramerTemplate` (WIP template) / `#FramerMarketplace` (listing live) / `#FramerChallenge` (only if true). optional soft `@framer` once when natural. never hashtag walls. WIP templates (e.g. Arbour): video/stills only — never post the live preview / template URL until launch.
 
-x algorithm (may 2026 / Phoenix): two-way threads beat likes. write so the author might reply back. optional one short question is ok if natural. never bait ("thoughts?", "agree?"). when following up after they reply to you: one short continue, no link, no question bait, no pitch.
+x algorithm (aug 2026 / For You defaults): copy-link and mutual replies beat likes. write so the author might reply back. optional one short question is ok if natural. never bait ("thoughts?", "agree?"). when following up after they reply to you: one short continue, no link, no question bait, no pitch. originals: make something people paste (named controls, short list, recipe) — likes are noise. self-reply marketplace links are for buyers, not ranking.
 
 empathy (when post has struggle): slow week, zero sales, rejection, behind on goals, burnout, hard launch, silence after shipping — acknowledge the feeling in one line. no advice, no "you got this" cheerleading, no fixing. no questions on empathy replies — just validate. examples: "the zero dollar weeks hit different", "that silence after listing is brutal", "week 3 slumps are real".
 

@@ -26,8 +26,8 @@ DAY_TYPES = {
 
 DEFAULT_HOOKS = {
     "clip": "one control that fixes scroll jank in framer",
-    "insight": "shared colors as source of truth across code components",
-    "take": "marketplace reviews reward depth over preset count",
+    "insight": "property controls I put on every framer component (and the one I hide)",
+    "take": "listings people save: one job, named controls, a 12s demo",
     "before_after": "before/after: inertia grid vs static gallery",
     "ecosystem": "sustained shipping beats one-off launches in the creator ecosystem",
     "recap": "week in framer components: what shipped and what broke",

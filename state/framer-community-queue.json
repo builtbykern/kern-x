@@ -2,6 +2,7 @@
   "cadence_days": "2-3",
   "invite_url": "https://www.framer.com/community/join?invite=y0MfazGKzAWL",
   "profile": "https://www.framer.com/@builtbykern/?tab=marketplace",
+  "notes": "Per-component status rows may be stale. Do not treat the first status:draft as the next post. Next Community beat: Arbour launch Thu 2026-08-20 12:00–14:00 CEST — state/arbour-community-queue.json id arbour-community-launch (docs/arbour-launch.md). After that, prefer a ship-story component with strong video (LetterRollMenu) over sterile punches.",
   "posts": [
     {
       "id": "kinetic-line",

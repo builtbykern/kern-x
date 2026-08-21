@@ -4,7 +4,7 @@
   "workflow": {
     "prompts": [
       {
-        "text": "KERN-Reply: Run runtime/reply-cycle.RUN.md exactly. Allowlist: state/*.json, voice/voice-compact.txt, logs/replies.json (last 20 only). No repo search.\n\nUse Browser for X (logged in as @builtbykern). If not logged in → posted_n: 0, reasons: error, stop.\n\nAfter each reply: python3 scripts/record_reply.py --handle @user --post-url URL --text \"reply\" (add --bump-rotation on last reply only).\n\nOne search query from state/query-rotation.json. Max 3 replies. 45-120s between replies. English only per voice/voice-compact.txt.\n\nOutput exactly 6 lines: posted_n, urls, skipped_n, reasons, replies_total, next_query."
+        "text": "KERN-Reply: Run runtime/reply-cycle.RUN.md exactly. Allowlist: state/*.json, voice/voice-compact.txt, logs/replies.json (last 20 only). No repo search.\n\nUse Browser for X (logged in as @builtbykern). If not logged in → posted_n: 0, reasons: error, stop.\n\nAfter each reply: python3 scripts/record_reply.py --handle @user --post-url URL --text \"reply\" (add --bump-rotation on last reply only).\n\nOne search query from state/query-rotation.json. Max 1 reply. Prefer conversation (questions, builder-choice) over media-only. 45-120s between replies. English only per voice/voice-compact.txt.\n\nOutput exactly 6 lines: posted_n, urls, skipped_n, reasons, replies_total, next_query."
       }
     ],
     "triggers": [

@@ -37,12 +37,9 @@ POST_BODIES: dict[str, dict[str, str]] = {
         "question": "Portfolio ring, agency reel, or product showcase — where would you drop this?",
     },
     "letter-roll-menu": {
-        "hook": "LetterRollMenu — vertical nav where every letter moves on its own",
-        "intro": "Static vertical menus cannot run per-letter spring rolls, 3D glyph flips, and a measured focus rail in one system. LetterRollMenu is built for studio and portfolio short-nav (3–5 labels).",
-        "bullets": "→ Roll, Wave, or Flip per-character choreography\n→ five motion presets in one click\n→ focus rail tracks active row geometry\n→ dim inactive rows + entrance stagger",
-        "note": "Typography scales desktop → tablet → mobile. Links, colors, and spacing from the panel.",
-        "video": "hover rows → letter roll → flip mode → focus rail slide",
-        "question": "Roll, Wave, or Flip — which signature fits your studio nav?",
+        "hook": "LetterRollMenu — per-letter motion on a short studio nav",
+        "body": "finally got per-letter motion to sit in a 4-item nav without looking like a slot machine.\n\nRoll, Wave, or Flip — the focus rail tracks the row.\n\nBuiltByKern → Marketplace → LetterRollMenu\n\nwhich signature would you actually ship?",
+        "video": "/Users/noel/Desktop/Framer/docs/projects/listings/Kern_LetterRollMenu_demo_3s.mp4",
     },
     "infinite-carousel-3d": {
         "hook": "InfiniteCarousel3D — cylindrical depth without heavy 3D libraries",
@@ -362,6 +359,10 @@ def main() -> None:
         "profile": catalog["profile"],
         "posts": queue_posts,
     }
+    if QUEUE.exists():
+        prior_doc = json.loads(QUEUE.read_text())
+        if prior_doc.get("notes"):
+            queue["notes"] = prior_doc["notes"]
     QUEUE.write_text(json.dumps(queue, indent=2) + "\n")
     print(f"Wrote {len(queue_posts)} posts to {POSTS_DIR}")
     print(f"Updated {QUEUE}")
