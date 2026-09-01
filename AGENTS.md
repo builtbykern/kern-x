@@ -10,6 +10,7 @@ Standalone repo for @builtbykern X automation. Do not treat BuiltByKern componen
 4. `docs/strategy.md` — humans/Sunday only; **not** for cron
 5. `.cursor/skills/` — humans only (positioning). Hub `builtbykern` may auto-invoke in human chats. Channel skills (`x-originals`, `framer-community`, `contra`, `instagram-explore`) are explicit. **Never** load skills during KERN-Post / KERN-Reply.
 6. `state/positioning.json` — this week's next beat per channel. Humans/skills only; **not** for cron.
+7. `.agents/skills/` + `.agents/product-marketing.md` — marketing (copywriting, marketing-ideas, marketing-psychology, launch). Grok Bot and human chats. Read product-marketing.md first. **Never** during KERN-Post / KERN-Reply.
 
 ## Cron agents (Cursor)
 
@@ -39,6 +40,10 @@ python3 scripts/positioning_status.py
 Optional: `docs/weekly-review.md`
 
 Positioning: agent drafts paste kits from `.cursor/skills/` + `state/positioning.json`. Noel OKs and pastes. Agent never publishes. KERN-Post must `status: stale_week` when `week-current.json` is not today's ISO week. Replies cron only if Noel asks.
+
+## Marketing (Grok Bot and human chats)
+
+If the task is copy, ideas, psychology, or a launch, read `.agents/product-marketing.md` first, then the matching skill in `.agents/skills/`. Do not paste those files into the session. Do not use them on cron.
 
 ## Framer Community (human)
 
